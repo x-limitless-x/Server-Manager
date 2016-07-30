@@ -1,0 +1,6 @@
+{
+  "name": "Server-manager",
+  "tagline": "This tool is being written in C# and will allow you to control many user defined services associated with your server (Game Server's, Applications, etc.) within one Central GUI.",
+  "body": "# Server-Manager\r\n\r\n## PLEASE REMEMBER: _This is a work in progress._ **Please bear with me as we Iron out the kinks!**\r\n\r\n\r\n![](http://i63.tinypic.com/miozrk.png)\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
