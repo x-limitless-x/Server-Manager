@@ -36,20 +36,12 @@
             this.statuslabelServerSelection = new System.Windows.Forms.ToolStripStatusLabel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.networkusage = new System.Windows.Forms.TextBox();
+            this.networkusagebox = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.computernamebox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.serviceStatus = new System.Windows.Forms.Label();
@@ -62,6 +54,17 @@
             this.currentPing = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.currentApplicationSelection = new System.Windows.Forms.Label();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cpuUsageBox = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.showhideperf_button = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newServerWizardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,20 +79,29 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.applicationSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gameServerSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showHideGamePanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.websiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label18 = new System.Windows.Forms.Label();
-            this.showhidesplit = new System.Windows.Forms.Button();
             this.statusStripForm = new System.Windows.Forms.StatusStrip();
             this.currentUptimeLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pingTimer = new System.Windows.Forms.Timer(this.components);
+            this.ConnectivityCheck_Timer = new System.Windows.Forms.Timer(this.components);
+            this.showhidesplit = new System.Windows.Forms.Button();
+            this.PerformanceInformationTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.statusStripServerSelection.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.statusStripForm.SuspendLayout();
             this.SuspendLayout();
@@ -108,6 +120,7 @@
             // splitContainer1
             // 
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(2, 67);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -121,22 +134,12 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.AutoScroll = true;
             this.splitContainer1.Panel2.AutoScrollMargin = new System.Drawing.Size(0, 15);
-            this.splitContainer1.Panel2.Controls.Add(this.button4);
+            this.splitContainer1.Panel2.ContextMenuStrip = this.contextMenuStrip1;
             this.splitContainer1.Panel2.Controls.Add(this.label16);
             this.splitContainer1.Panel2.Controls.Add(this.label17);
-            this.splitContainer1.Panel2.Controls.Add(this.networkusage);
+            this.splitContainer1.Panel2.Controls.Add(this.networkusagebox);
             this.splitContainer1.Panel2.Controls.Add(this.label15);
-            this.splitContainer1.Panel2.Controls.Add(this.label13);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox6);
-            this.splitContainer1.Panel2.Controls.Add(this.label14);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox7);
-            this.splitContainer1.Panel2.Controls.Add(this.label12);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox5);
-            this.splitContainer1.Panel2.Controls.Add(this.label9);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox3);
-            this.splitContainer1.Panel2.Controls.Add(this.label11);
             this.splitContainer1.Panel2.Controls.Add(this.computernamebox);
             this.splitContainer1.Panel2.Controls.Add(this.label10);
             this.splitContainer1.Panel2.Controls.Add(this.serviceStatus);
@@ -149,6 +152,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.currentPing);
             this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.currentApplicationSelection);
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(802, 349);
             this.splitContainer1.SplitterDistance = 110;
             this.splitContainer1.TabIndex = 1;
@@ -228,14 +232,19 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.MouseEnter += new System.EventHandler(this.ProjectZomboidMouseEnter);
             // 
-            // button4
+            // contextMenuStrip1
             // 
-            this.button4.Location = new System.Drawing.Point(7, 323);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(656, 23);
-            this.button4.TabIndex = 30;
-            this.button4.Text = "Show / Hide Performance Information";
-            this.button4.UseVisualStyleBackColor = true;
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.testToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(175, 26);
+            // 
+            // testToolStripMenuItem
+            // 
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.testToolStripMenuItem.Text = "Restart Application";
+            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
             // 
             // label16
             // 
@@ -257,12 +266,15 @@
             this.label17.TabIndex = 28;
             this.label17.Text = "Players Online:";
             // 
-            // networkusage
+            // networkusagebox
             // 
-            this.networkusage.Location = new System.Drawing.Point(157, 159);
-            this.networkusage.Name = "networkusage";
-            this.networkusage.Size = new System.Drawing.Size(126, 20);
-            this.networkusage.TabIndex = 26;
+            this.networkusagebox.Location = new System.Drawing.Point(157, 159);
+            this.networkusagebox.Name = "networkusagebox";
+            this.networkusagebox.ReadOnly = true;
+            this.networkusagebox.Size = new System.Drawing.Size(126, 20);
+            this.networkusagebox.TabIndex = 26;
+            this.networkusagebox.Click += new System.EventHandler(this.SelectAll_NetworkUsageBox);
+            this.networkusagebox.DoubleClick += new System.EventHandler(this.DoNothing);
             // 
             // label15
             // 
@@ -274,90 +286,15 @@
             this.label15.TabIndex = 25;
             this.label15.Text = "Current Network Usage:";
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(426, 419);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(69, 15);
-            this.label13.TabIndex = 24;
-            this.label13.Text = "Ram Used:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(500, 418);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 23;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(421, 393);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(84, 15);
-            this.label14.TabIndex = 22;
-            this.label14.Text = "Power Usage:";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(500, 392);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 21;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(9, 419);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(69, 15);
-            this.label12.TabIndex = 19;
-            this.label12.Text = "Ram Used:";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(83, 418);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 18;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(4, 393);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 15);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "CPU Usage:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(83, 392);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 16;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 367);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(111, 20);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "Performance";
-            // 
             // computernamebox
             // 
             this.computernamebox.Location = new System.Drawing.Point(157, 81);
             this.computernamebox.Name = "computernamebox";
+            this.computernamebox.ReadOnly = true;
             this.computernamebox.Size = new System.Drawing.Size(126, 20);
             this.computernamebox.TabIndex = 13;
+            this.computernamebox.Click += new System.EventHandler(this.SelectAll_ComputerName);
+            this.computernamebox.DoubleClick += new System.EventHandler(this.DoNothing);
             // 
             // label10
             // 
@@ -383,15 +320,21 @@
             // 
             this.localipaddressbox.Location = new System.Drawing.Point(157, 133);
             this.localipaddressbox.Name = "localipaddressbox";
+            this.localipaddressbox.ReadOnly = true;
             this.localipaddressbox.Size = new System.Drawing.Size(126, 20);
             this.localipaddressbox.TabIndex = 9;
+            this.localipaddressbox.Click += new System.EventHandler(this.SelectAll_LocalipAddressBox);
+            this.localipaddressbox.DoubleClick += new System.EventHandler(this.DoNothing);
             // 
             // publicipaddressbox
             // 
             this.publicipaddressbox.Location = new System.Drawing.Point(157, 107);
             this.publicipaddressbox.Name = "publicipaddressbox";
+            this.publicipaddressbox.ReadOnly = true;
             this.publicipaddressbox.Size = new System.Drawing.Size(126, 20);
             this.publicipaddressbox.TabIndex = 8;
+            this.publicipaddressbox.Click += new System.EventHandler(this.SelectAll_PublicIP);
+            this.publicipaddressbox.DoubleClick += new System.EventHandler(this.DoNothing);
             // 
             // label7
             // 
@@ -415,6 +358,7 @@
             // 
             // linkLabel1
             // 
+            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(326, 6);
             this.linkLabel1.Name = "linkLabel1";
@@ -439,12 +383,13 @@
             this.currentPing.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentPing.Location = new System.Drawing.Point(6, 40);
             this.currentPing.Name = "currentPing";
-            this.currentPing.Size = new System.Drawing.Size(112, 15);
+            this.currentPing.Size = new System.Drawing.Size(132, 15);
             this.currentPing.TabIndex = 3;
-            this.currentPing.Text = "Current Ping: 30ms";
+            this.currentPing.Text = "Current Ping: Pinging...";
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(406, 4);
@@ -463,6 +408,134 @@
             this.currentApplicationSelection.TabIndex = 0;
             this.currentApplicationSelection.Text = "Evil Lurks [DedicatedBox]";
             // 
+            // splitContainer2
+            // 
+            this.splitContainer2.IsSplitterFixed = true;
+            this.splitContainer2.Location = new System.Drawing.Point(-1, 208);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.label11);
+            this.splitContainer2.Panel1.Controls.Add(this.label13);
+            this.splitContainer2.Panel1.Controls.Add(this.textBox6);
+            this.splitContainer2.Panel1.Controls.Add(this.label14);
+            this.splitContainer2.Panel1.Controls.Add(this.cpuUsageBox);
+            this.splitContainer2.Panel1.Controls.Add(this.textBox7);
+            this.splitContainer2.Panel1.Controls.Add(this.label9);
+            this.splitContainer2.Panel1.Controls.Add(this.label12);
+            this.splitContainer2.Panel1.Controls.Add(this.textBox5);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.showhideperf_button);
+            this.splitContainer2.Size = new System.Drawing.Size(689, 138);
+            this.splitContainer2.SplitterDistance = 105;
+            this.splitContainer2.TabIndex = 40;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(270, 12);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(111, 20);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "Performance";
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(404, 56);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(104, 15);
+            this.label13.TabIndex = 39;
+            this.label13.Text = "Main Disk Usage:";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox6.Location = new System.Drawing.Point(513, 55);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.TabIndex = 38;
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(424, 34);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(84, 15);
+            this.label14.TabIndex = 37;
+            this.label14.Text = "Power Usage:";
+            // 
+            // cpuUsageBox
+            // 
+            this.cpuUsageBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cpuUsageBox.Location = new System.Drawing.Point(96, 29);
+            this.cpuUsageBox.Name = "cpuUsageBox";
+            this.cpuUsageBox.ReadOnly = true;
+            this.cpuUsageBox.Size = new System.Drawing.Size(100, 20);
+            this.cpuUsageBox.TabIndex = 32;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox7.Location = new System.Drawing.Point(513, 29);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
+            this.textBox7.Size = new System.Drawing.Size(100, 20);
+            this.textBox7.TabIndex = 36;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(17, 30);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 15);
+            this.label9.TabIndex = 33;
+            this.label9.Text = "CPU Usage:";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(22, 56);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(69, 15);
+            this.label12.TabIndex = 35;
+            this.label12.Text = "Ram Used:";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox5.Location = new System.Drawing.Point(96, 55);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.TabIndex = 34;
+            // 
+            // showhideperf_button
+            // 
+            this.showhideperf_button.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.showhideperf_button.Location = new System.Drawing.Point(0, 10);
+            this.showhideperf_button.Name = "showhideperf_button";
+            this.showhideperf_button.Size = new System.Drawing.Size(689, 19);
+            this.showhideperf_button.TabIndex = 30;
+            this.showhideperf_button.Text = "Hide Performance Information";
+            this.showhideperf_button.UseVisualStyleBackColor = true;
+            this.showhideperf_button.Click += new System.EventHandler(this.ShowHidePerfButton);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -470,6 +543,7 @@
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
             this.settingsToolStripMenuItem,
+            this.viewToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -488,6 +562,12 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.DropDownClosed += new System.EventHandler(this.file_DropDownClosed);
+            this.fileToolStripMenuItem.DropDownOpened += new System.EventHandler(this.file_ChangeColor);
+            this.fileToolStripMenuItem.Click += new System.EventHandler(this.file_ChangeColor);
+            this.fileToolStripMenuItem.EnabledChanged += new System.EventHandler(this.file_ChangeColor);
+            this.fileToolStripMenuItem.MouseEnter += new System.EventHandler(this.file_ChangeColor);
+            this.fileToolStripMenuItem.MouseHover += new System.EventHandler(this.file_DropDownClosed);
             // 
             // newServerWizardToolStripMenuItem
             // 
@@ -520,6 +600,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -531,6 +612,11 @@
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.DropDownClosed += new System.EventHandler(this.edit_DropDownClosed);
+            this.editToolStripMenuItem.DropDownOpened += new System.EventHandler(this.edit_ChangeColor);
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.edit_ChangeColor);
+            this.editToolStripMenuItem.MouseEnter += new System.EventHandler(this.edit_ChangeColor);
+            this.editToolStripMenuItem.MouseHover += new System.EventHandler(this.edit_DropDownClosed);
             // 
             // cutToolStripMenuItem
             // 
@@ -543,6 +629,7 @@
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.copyToolStripMenuItem.Text = "Copy";
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
             // pasteToolStripMenuItem
             // 
@@ -559,6 +646,11 @@
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.DropDownClosed += new System.EventHandler(this.settings_DropDownClosed);
+            this.settingsToolStripMenuItem.DropDownOpened += new System.EventHandler(this.settings_ChangeColor);
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settings_ChangeColor);
+            this.settingsToolStripMenuItem.MouseEnter += new System.EventHandler(this.settings_ChangeColor);
+            this.settingsToolStripMenuItem.MouseHover += new System.EventHandler(this.settings_DropDownClosed);
             // 
             // applicationSettingsToolStripMenuItem
             // 
@@ -571,6 +663,28 @@
             this.gameServerSettingsToolStripMenuItem.Name = "gameServerSettingsToolStripMenuItem";
             this.gameServerSettingsToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.gameServerSettingsToolStripMenuItem.Text = "Game Server Settings";
+            this.gameServerSettingsToolStripMenuItem.Click += new System.EventHandler(this.GameServerSettings_Clicked);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showHideGamePanelToolStripMenuItem});
+            this.viewToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            this.viewToolStripMenuItem.DropDownClosed += new System.EventHandler(this.view_DropDownClosed);
+            this.viewToolStripMenuItem.DropDownOpened += new System.EventHandler(this.view_ChangeColor);
+            this.viewToolStripMenuItem.Click += new System.EventHandler(this.view_ChangeColor);
+            this.viewToolStripMenuItem.MouseEnter += new System.EventHandler(this.view_ChangeColor);
+            this.viewToolStripMenuItem.MouseHover += new System.EventHandler(this.view_DropDownClosed);
+            // 
+            // showHideGamePanelToolStripMenuItem
+            // 
+            this.showHideGamePanelToolStripMenuItem.Name = "showHideGamePanelToolStripMenuItem";
+            this.showHideGamePanelToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.showHideGamePanelToolStripMenuItem.Text = "Switch to Minimalist View";
+            this.showHideGamePanelToolStripMenuItem.Click += new System.EventHandler(this.MinimalistView_Clicked);
             // 
             // helpToolStripMenuItem
             // 
@@ -581,6 +695,11 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.DropDownClosed += new System.EventHandler(this.help_DropDownClosed);
+            this.helpToolStripMenuItem.DropDownOpened += new System.EventHandler(this.help_ChangeColor);
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.help_ChangeColor);
+            this.helpToolStripMenuItem.MouseEnter += new System.EventHandler(this.help_ChangeColor);
+            this.helpToolStripMenuItem.MouseHover += new System.EventHandler(this.help_DropDownClosed);
             // 
             // websiteToolStripMenuItem
             // 
@@ -612,17 +731,6 @@
             this.label18.TabIndex = 5;
             this.label18.Text = "Click to Show / Hide";
             // 
-            // showhidesplit
-            // 
-            this.showhidesplit.BackgroundImage = global::Server_Manager.Properties.Resources.menucollapseright;
-            this.showhidesplit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.showhidesplit.Location = new System.Drawing.Point(102, 28);
-            this.showhidesplit.Name = "showhidesplit";
-            this.showhidesplit.Size = new System.Drawing.Size(21, 22);
-            this.showhidesplit.TabIndex = 4;
-            this.showhidesplit.UseVisualStyleBackColor = true;
-            this.showhidesplit.Click += new System.EventHandler(this.OpenClosesplitcontainer);
-            // 
             // statusStripForm
             // 
             this.statusStripForm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -638,14 +746,37 @@
             this.currentUptimeLabel.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.currentUptimeLabel.BackColor = System.Drawing.Color.Transparent;
             this.currentUptimeLabel.Name = "currentUptimeLabel";
-            this.currentUptimeLabel.Size = new System.Drawing.Size(207, 17);
-            this.currentUptimeLabel.Text = "Uptime: 3 hours 5 minutes 10 seconds";
+            this.currentUptimeLabel.Size = new System.Drawing.Size(134, 17);
+            this.currentUptimeLabel.Text = "Gathering Information...";
             // 
-            // timer1
+            // pingTimer
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 300;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.pingTimer.Enabled = true;
+            this.pingTimer.Interval = 1500;
+            this.pingTimer.Tick += new System.EventHandler(this.ping_timer);
+            // 
+            // ConnectivityCheck_Timer
+            // 
+            this.ConnectivityCheck_Timer.Enabled = true;
+            this.ConnectivityCheck_Timer.Interval = 1500;
+            this.ConnectivityCheck_Timer.Tick += new System.EventHandler(this.ConnectivityCheck_tick);
+            // 
+            // showhidesplit
+            // 
+            this.showhidesplit.BackgroundImage = global::Server_Manager.Properties.Resources.menucollapseright;
+            this.showhidesplit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.showhidesplit.Location = new System.Drawing.Point(102, 28);
+            this.showhidesplit.Name = "showhidesplit";
+            this.showhidesplit.Size = new System.Drawing.Size(21, 22);
+            this.showhidesplit.TabIndex = 4;
+            this.showhidesplit.UseVisualStyleBackColor = true;
+            this.showhidesplit.Click += new System.EventHandler(this.OpenClosesplitcontainer);
+            // 
+            // PerformanceInformationTimer
+            // 
+            this.PerformanceInformationTimer.Enabled = true;
+            this.PerformanceInformationTimer.Interval = 1000;
+            this.PerformanceInformationTimer.Tick += new System.EventHandler(this.Performance_tick);
             // 
             // Form1
             // 
@@ -674,6 +805,12 @@
             this.splitContainer1.ResumeLayout(false);
             this.statusStripServerSelection.ResumeLayout(false);
             this.statusStripServerSelection.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStripForm.ResumeLayout(false);
@@ -721,26 +858,33 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.StatusStrip statusStripServerSelection;
         private System.Windows.Forms.ToolStripStatusLabel statuslabelServerSelection;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox networkusage;
+        private System.Windows.Forms.TextBox networkusagebox;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Button showhidesplit;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button showhideperf_button;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.StatusStrip statusStripForm;
         private System.Windows.Forms.ToolStripStatusLabel currentUptimeLabel;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer pingTimer;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox cpuUsageBox;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showHideGamePanelToolStripMenuItem;
+        private System.Windows.Forms.Timer ConnectivityCheck_Timer;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+        private System.Windows.Forms.Timer PerformanceInformationTimer;
     }
 }
 

@@ -10,29 +10,54 @@ using System.Net;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Sockets;
+using System.Threading;
+using System.Net.NetworkInformation;
+
+
+
+
 
 namespace Server_Manager
 {
 
     public partial class Form1 : Form
     {
+        public string networkusageSentVar { get; private set; }
+        public string performanceCounterSent { get; private set; }
+        public int SplitContainerClicked { get; private set; }
+        public int ShowHidePerfClicked { get; private set; }
+
+
         public Form1()
         {
             InitializeComponent();
-
         }
-        
+
         private void LoadForm(object sender, EventArgs e)
         {
-            string pubIp = new System.Net.WebClient().DownloadString("https://api.ipify.org");
-            string localComputerName = Dns.GetHostName();
-            string LocalIp = LocalIPAddress().ToString();
 
-            IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
 
-            computernamebox.Text = localComputerName;
-            publicipaddressbox.Text = pubIp;
-            localipaddressbox.Text = LocalIp;
+
+            try
+            {
+                string pubIp = new System.Net.WebClient().DownloadString("https://api.ipify.org");
+                string localComputerName = Dns.GetHostName();
+                string LocalIp = LocalIPAddress().ToString();
+                SplitContainerClicked = 0;
+
+                ShowHidePerfClicked = 2;
+
+                IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
+
+                computernamebox.Text = localComputerName;
+                publicipaddressbox.Text = pubIp;
+                localipaddressbox.Text = LocalIp;
+            }
+            catch (Exception)
+            {
+                //handle the exception your way
+
+            }
         }
 
 
@@ -43,7 +68,7 @@ namespace Server_Manager
             try
             {
                 var time = GetSystemUpTime();
-                var upTime = string.Format("{0:D2} hours {1:D2} minutes {2:D2} seconds", time.Hours, time.Minutes, time.Seconds);
+                var upTime = string.Format("Current System Uptime: {0:D0} day(s) {1:D0} hour(s) {2:D0} minute(s) {3:D0} second(s)", time.Days, time.Hours, time.Minutes, time.Seconds);
 
                 return String.Format("{0}", upTime);
             }
@@ -109,32 +134,272 @@ namespace Server_Manager
             statuslabelServerSelection.Text = "Murmur Server";
         }
 
+
         private void OpenClosesplitcontainer(object sender, EventArgs e)
         {
-            int SplitContainerClicked = 0;
+
 
             //Split Container Change Background Image. (NEED GLOBAL VARIABLE DEFINED)
-            if (SplitContainerClicked != 0)
-        { 
-            showhidesplit.BackgroundImage = Resources.menucollapseleft;
-        }
-           else
-        {
-                // bool SplitContainerClicked = true;
+
+            if (SplitContainerClicked == 0)
+            {
+                showhidesplit.BackgroundImage = Resources.menucollapseleft;
+                splitContainer2.Location = new System.Drawing.Point(-5, 208);
+                splitContainer2.Width = 832;
+
+                splitContainer1.Location = new System.Drawing.Point(-30, 67);
+                splitContainer1.Width = 832;
+                splitContainer1.Panel1.Visible = false;
+                splitContainer1.SplitterDistance = 0;
+                SplitContainerClicked = 1;
+            }
+            else
+            {
                 showhidesplit.BackgroundImage = Resources.menucollapseright;
-           }          
+                splitContainer2.Location = new System.Drawing.Point(-1, 208);
+                splitContainer2.Width = 689;
+
+                splitContainer1.Location = new System.Drawing.Point(2, 67);
+                splitContainer1.Width = 802;
+                splitContainer1.Panel1.Visible = true;
+                splitContainer1.SplitterDistance = 110;
+                SplitContainerClicked = 0;
+            }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+
+        private void ShowHidePerfButton(object sender, EventArgs e)
         {
-            //GetSystemUpTimeInfo();
-
-            currentUptimeLabel.Text = GetSystemUpTimeInfo();
+            if (ShowHidePerfClicked == 1)
+            {
+                splitContainer2.Panel1.Visible = false;
+                showhideperf_button.Text = "Show Performance Information";
+                ShowHidePerfClicked = 0;
+            }
+            else if (ShowHidePerfClicked == 0)
+            {
+                splitContainer2.Panel1.Visible = true;
+                showhideperf_button.Text = "Hide Performance Information";
+                ShowHidePerfClicked = 1;
+            }
+            else if (ShowHidePerfClicked == 2)
+            {
+                splitContainer2.Panel1.Visible = false;
+                showhideperf_button.Text = "Show Performance Information";
+                ShowHidePerfClicked = 0;
+            }
 
         }
 
+        private void ConnectivityCheck_tick(object sender, EventArgs e)
+        {
+            //Retrieve IP Status
+            try
+            {
+                string localComputerName = Dns.GetHostName();
+                string pubIp = new System.Net.WebClient().DownloadString("https://api.ipify.org");
+                string LocalIp = LocalIPAddress().ToString();
 
+                //Start Naming Controls
+                computernamebox.Text = localComputerName;
+                publicipaddressbox.Text = pubIp;
+                localipaddressbox.Text = LocalIp;
+            }
+            //            catch (SocketException ex)
+            //           {
+            //                publicipaddressbox.Text = "Cannot Retrieve Your IP";
+            //                localipaddressbox.Text = "Cannot Retrieve Your IP";
+            //                Thread.Sleep(500);
+            //            }
+            catch (Exception ex)
+            {
+
+                publicipaddressbox.Text = "No Connectivity";
+                localipaddressbox.Text = "No Connectivity";
+
+                //catch all other exceptions
+
+
+
+            }
+
+
+            if (SplitContainerClicked == 0)
+            {
+
+                showhidesplit.BackgroundImage = Resources.menucollapseleft;
+                showHideGamePanelToolStripMenuItem.Text = "Switch to Minimalist View";
+            }
+            else
+            {
+
+                showhidesplit.BackgroundImage = Resources.menucollapseright;
+                showHideGamePanelToolStripMenuItem.Text = "Switch to Management View";
+            }
+        }
+
+        private void Performance_tick(object sender, EventArgs e)
+        {
+            currentUptimeLabel.Text = GetSystemUpTimeInfo();
+            //cpuUsageBox.Text = "";
+        }
+
+        private void SelectAll_ComputerName(object sender, EventArgs e)
+        {
+            computernamebox.SelectAll();
+            computernamebox.Focus(); //you need to call this to show selection if it doesn't has focus
+        }
+
+        private void SelectAll_PublicIP(object sender, EventArgs e)
+        {
+            publicipaddressbox.SelectAll();
+            publicipaddressbox.Focus(); //you need to call this to show selection if it doesn't has focus
+
+        }
+
+        private void SelectAll_LocalipAddressBox(object sender, EventArgs e)
+        {
+            localipaddressbox.SelectAll();
+            localipaddressbox.Focus(); //you need to call this to show selection if it doesn't has focus
+
+        }
+
+        private void SelectAll_NetworkUsageBox(object sender, EventArgs e)
+        {
+            networkusagebox.SelectAll();
+            networkusagebox.Focus(); //you need to call this to show selection if it doesn't has focus
+
+        }
+
+        private void MinimalistView_Clicked(object sender, EventArgs e)
+        {
+            {
+
+                if (SplitContainerClicked == 0)
+                {
+                    ShowHidePerfClicked = 2;
+                    showhideperf_button.Text = "Show Performance Information";
+                    showhidesplit.BackgroundImage = Resources.menucollapseleft;
+                    splitContainer2.Location = new System.Drawing.Point(-5, 208);
+                    splitContainer2.Width = 832;
+                    splitContainer2.Panel1.Visible = false;
+
+
+                    splitContainer1.Location = new System.Drawing.Point(-30, 67);
+                    splitContainer1.Width = 832;
+                    splitContainer1.Panel1.Visible = false;
+                    splitContainer1.SplitterDistance = 0;
+                    SplitContainerClicked = 1;
+
+                }
+                else
+                {
+                    ShowHidePerfClicked = 1;
+                    showhideperf_button.Text = "Hide Performance Information";
+                    showhidesplit.BackgroundImage = Resources.menucollapseright;
+                    splitContainer2.Location = new System.Drawing.Point(-1, 208);
+                    splitContainer2.Width = 689;
+                    splitContainer2.Panel1.Visible = true;
+
+                    splitContainer1.Location = new System.Drawing.Point(2, 67);
+                    splitContainer1.Width = 802;
+                    splitContainer1.Panel1.Visible = true;
+                    splitContainer1.SplitterDistance = 110;
+                    SplitContainerClicked = 0;
+                }
+            }
+        }
+
+        private void GameServerSettings_Clicked(object sender, EventArgs e)
+        {
+            SettingsForm form = new SettingsForm();
+            form.ShowDialog(this);
+            //form.Show(); // or form.ShowDialog(this
+
+        }
+
+        private void testToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(Application.ExecutablePath); // to start new instance of application
+            this.Close(); //to turn off current app
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Clipboard.SetText(this.ActiveControl.Name);
+        }
+
+        private void DoNothing(object sender, EventArgs e)
+        {
+            return;
+        }
+
+
+        private void ping_timer(object sender, EventArgs e)
+        {
+
+            using (Ping p = new Ping())
+            {
+                currentPing.Text = "Current Ping: " + p.Send("8.8.8.8").RoundtripTime.ToString() + "ms";
+            }
+        }
+
+//Start Changing Colors of Menu Items
+
+        private void file_ChangeColor(object sender, EventArgs e)
+        {
+            fileToolStripMenuItem.ForeColor = Color.FromArgb(0, 0, 0);
+        }
+
+        private void edit_ChangeColor(object sender, EventArgs e)
+        {
+            editToolStripMenuItem.ForeColor = Color.FromArgb(0, 0, 0);
+        }
+
+        private void settings_ChangeColor(object sender, EventArgs e)
+        {
+            settingsToolStripMenuItem.ForeColor = Color.FromArgb(0, 0, 0);
+        }
+
+        private void view_ChangeColor(object sender, EventArgs e)
+        {
+            viewToolStripMenuItem.ForeColor = Color.FromArgb(0, 0, 0);
+        }
+
+        private void help_ChangeColor(object sender, EventArgs e)
+        {
+            helpToolStripMenuItem.ForeColor = Color.FromArgb(0, 0, 0);
+        }
+
+        private void file_DropDownClosed(object sender, EventArgs e)
+        {
+            fileToolStripMenuItem.ForeColor = Color.FromArgb(255, 255, 255);
+        }
+
+        private void edit_DropDownClosed(object sender, EventArgs e)
+        {
+            editToolStripMenuItem.ForeColor = Color.FromArgb(255, 255, 255);
+        }
+
+        private void settings_DropDownClosed(object sender, EventArgs e)
+        {
+            settingsToolStripMenuItem.ForeColor = Color.FromArgb(255, 255, 255);
+        }
+
+        private void view_DropDownClosed(object sender, EventArgs e)
+        {
+            viewToolStripMenuItem.ForeColor = Color.FromArgb(255, 255, 255);
+        }
+
+
+        private void help_DropDownClosed(object sender, EventArgs e)
+        {
+            helpToolStripMenuItem.ForeColor = Color.FromArgb(255, 255, 255);
+        }
     }
-
-
 }
