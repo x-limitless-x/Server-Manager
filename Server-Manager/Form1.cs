@@ -78,7 +78,7 @@ namespace Server_Manager
             try
             {
                 var time = GetSystemUpTime();
-                var upTime = string.Format("Current System Uptime: {0:D0} day(s) {1:D0} hour(s) {2:D0} minute(s) {3:D0} second(s)", time.Days, time.Hours, time.Minutes, time.Seconds);
+                var upTime = string.Format("Current System Uptime: {0:D0} day('s) {1:D0} hour('s) {2:D0} minute('s) {3:D0} second('s)", time.Days, time.Hours, time.Minutes, time.Seconds);
 
                 return String.Format("{0}", upTime);
             }
