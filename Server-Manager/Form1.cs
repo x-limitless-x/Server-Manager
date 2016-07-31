@@ -26,7 +26,8 @@ namespace Server_Manager
         public string performanceCounterSent { get; private set; }
         public int SplitContainerClicked { get; private set; }
         public int ShowHidePerfClicked { get; private set; }
-
+        public int bytesSentSpeed = 0;
+        public int bytesReceivedSpeed = 0;
 
         public Form1()
         {
@@ -40,6 +41,15 @@ namespace Server_Manager
 
             try
             {
+
+
+
+
+                IPv4InterfaceStatistics interfaceStats = NetworkInterface.GetAllNetworkInterfaces()[0].GetIPv4Statistics();
+                bytesSentSpeed = (int)(interfaceStats.BytesSent - bytesSentSpeed) / 1024;
+                bytesReceivedSpeed = (int)(interfaceStats.BytesReceived - bytesReceivedSpeed) / 1024;
+
+
                 string pubIp = new System.Net.WebClient().DownloadString("https://api.ipify.org");
                 string localComputerName = Dns.GetHostName();
                 string LocalIp = LocalIPAddress().ToString();
@@ -240,8 +250,30 @@ namespace Server_Manager
 
         private void Performance_tick(object sender, EventArgs e)
         {
+            //CPU Usage Retrieval
+            PerformanceCounter cpuCounter = new PerformanceCounter();
+            cpuCounter.CategoryName = "Processor";
+            cpuCounter.CounterName = "% Processor Time";
+            cpuCounter.InstanceName = "_Total";
+            PerformanceCounter ramCounter = new PerformanceCounter("Memory", "Available MBytes");
+
+            var unused = cpuCounter.NextValue(); // first call will always return 0
+            System.Threading.Thread.Sleep(1000); // wait a second, then try again
+            //
+
+            //Start Network Speed Monitoring
+
+            IPv4InterfaceStatistics interfaceStats = NetworkInterface.GetAllNetworkInterfaces()[0].GetIPv4Statistics();
+            bytesSentSpeed = (int)(interfaceStats.BytesSent - bytesSentSpeed) / 1024;
+            bytesReceivedSpeed = (int)(interfaceStats.BytesReceived - bytesReceivedSpeed) / 1024;
+            //Stop Network Speed Monitoring
+
             currentUptimeLabel.Text = GetSystemUpTimeInfo();
-            //cpuUsageBox.Text = "";
+            cpuUsageBox.Text = (cpuCounter.NextValue() + "%");
+            ramUsageBox.Text = (ramCounter.NextValue() + "MB");
+            networkusagesent.Text = bytesSentSpeed.ToString() +" b/s";
+            networkusagereceived.Text = bytesReceivedSpeed.ToString() + " b/s";
+            
         }
 
         private void SelectAll_ComputerName(object sender, EventArgs e)
@@ -266,8 +298,8 @@ namespace Server_Manager
 
         private void SelectAll_NetworkUsageBox(object sender, EventArgs e)
         {
-            networkusagebox.SelectAll();
-            networkusagebox.Focus(); //you need to call this to show selection if it doesn't has focus
+            networkusagesent.SelectAll();
+            networkusagesent.Focus(); //you need to call this to show selection if it doesn't has focus
 
         }
 
@@ -349,7 +381,7 @@ namespace Server_Manager
             }
         }
 
-//Start Changing Colors of Menu Items
+        //Start Changing Colors of Menu Items
 
         private void file_ChangeColor(object sender, EventArgs e)
         {
@@ -401,5 +433,8 @@ namespace Server_Manager
         {
             helpToolStripMenuItem.ForeColor = Color.FromArgb(255, 255, 255);
         }
+
+    
+        }
     }
-}
+

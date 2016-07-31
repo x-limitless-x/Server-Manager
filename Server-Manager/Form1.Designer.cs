@@ -38,9 +38,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.networkusagereceived = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.networkusagebox = new System.Windows.Forms.TextBox();
+            this.networkusagesent = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.computernamebox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -63,8 +64,10 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.ramUsageBox = new System.Windows.Forms.TextBox();
             this.showhideperf_button = new System.Windows.Forms.Button();
+            this.NetworkReceivedLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newServerWizardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -136,9 +139,10 @@
             // 
             this.splitContainer1.Panel2.AutoScrollMargin = new System.Drawing.Size(0, 15);
             this.splitContainer1.Panel2.ContextMenuStrip = this.contextMenuStrip1;
+            this.splitContainer1.Panel2.Controls.Add(this.networkusagereceived);
             this.splitContainer1.Panel2.Controls.Add(this.label16);
             this.splitContainer1.Panel2.Controls.Add(this.label17);
-            this.splitContainer1.Panel2.Controls.Add(this.networkusagebox);
+            this.splitContainer1.Panel2.Controls.Add(this.networkusagesent);
             this.splitContainer1.Panel2.Controls.Add(this.label15);
             this.splitContainer1.Panel2.Controls.Add(this.computernamebox);
             this.splitContainer1.Panel2.Controls.Add(this.label10);
@@ -153,6 +157,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.currentApplicationSelection);
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Panel2.Controls.Add(this.NetworkReceivedLabel);
+            this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Size = new System.Drawing.Size(802, 349);
             this.splitContainer1.SplitterDistance = 110;
             this.splitContainer1.TabIndex = 1;
@@ -246,6 +252,14 @@
             this.testToolStripMenuItem.Text = "Restart Application";
             this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
             // 
+            // networkusagereceived
+            // 
+            this.networkusagereceived.Location = new System.Drawing.Point(228, 167);
+            this.networkusagereceived.Name = "networkusagereceived";
+            this.networkusagereceived.ReadOnly = true;
+            this.networkusagereceived.Size = new System.Drawing.Size(74, 20);
+            this.networkusagereceived.TabIndex = 41;
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -266,21 +280,21 @@
             this.label17.TabIndex = 28;
             this.label17.Text = "Players Online:";
             // 
-            // networkusagebox
+            // networkusagesent
             // 
-            this.networkusagebox.Location = new System.Drawing.Point(157, 159);
-            this.networkusagebox.Name = "networkusagebox";
-            this.networkusagebox.ReadOnly = true;
-            this.networkusagebox.Size = new System.Drawing.Size(126, 20);
-            this.networkusagebox.TabIndex = 26;
-            this.networkusagebox.Click += new System.EventHandler(this.SelectAll_NetworkUsageBox);
-            this.networkusagebox.DoubleClick += new System.EventHandler(this.DoNothing);
+            this.networkusagesent.Location = new System.Drawing.Point(157, 167);
+            this.networkusagesent.Name = "networkusagesent";
+            this.networkusagesent.ReadOnly = true;
+            this.networkusagesent.Size = new System.Drawing.Size(55, 20);
+            this.networkusagesent.TabIndex = 26;
+            this.networkusagesent.Click += new System.EventHandler(this.SelectAll_NetworkUsageBox);
+            this.networkusagesent.DoubleClick += new System.EventHandler(this.DoNothing);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(20, 159);
+            this.label15.Location = new System.Drawing.Point(20, 167);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(137, 15);
             this.label15.TabIndex = 25;
@@ -425,7 +439,7 @@
             this.splitContainer2.Panel1.Controls.Add(this.textBox7);
             this.splitContainer2.Panel1.Controls.Add(this.label9);
             this.splitContainer2.Panel1.Controls.Add(this.label12);
-            this.splitContainer2.Panel1.Controls.Add(this.textBox5);
+            this.splitContainer2.Panel1.Controls.Add(this.ramUsageBox);
             // 
             // splitContainer2.Panel2
             // 
@@ -516,14 +530,14 @@
             this.label12.TabIndex = 35;
             this.label12.Text = "Ram Used:";
             // 
-            // textBox5
+            // ramUsageBox
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox5.Location = new System.Drawing.Point(96, 55);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 34;
+            this.ramUsageBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ramUsageBox.Location = new System.Drawing.Point(96, 55);
+            this.ramUsageBox.Name = "ramUsageBox";
+            this.ramUsageBox.ReadOnly = true;
+            this.ramUsageBox.Size = new System.Drawing.Size(100, 20);
+            this.ramUsageBox.TabIndex = 34;
             // 
             // showhideperf_button
             // 
@@ -535,6 +549,26 @@
             this.showhideperf_button.Text = "Hide Performance Information";
             this.showhideperf_button.UseVisualStyleBackColor = true;
             this.showhideperf_button.Click += new System.EventHandler(this.ShowHidePerfButton);
+            // 
+            // NetworkReceivedLabel
+            // 
+            this.NetworkReceivedLabel.AutoSize = true;
+            this.NetworkReceivedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NetworkReceivedLabel.Location = new System.Drawing.Point(223, 151);
+            this.NetworkReceivedLabel.Name = "NetworkReceivedLabel";
+            this.NetworkReceivedLabel.Size = new System.Drawing.Size(66, 15);
+            this.NetworkReceivedLabel.TabIndex = 43;
+            this.NetworkReceivedLabel.Text = "Received";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(165, 152);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 15);
+            this.label2.TabIndex = 42;
+            this.label2.Text = "Sent";
             // 
             // menuStrip1
             // 
@@ -858,7 +892,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.StatusStrip statusStripServerSelection;
         private System.Windows.Forms.ToolStripStatusLabel statuslabelServerSelection;
-        private System.Windows.Forms.TextBox networkusagebox;
+        private System.Windows.Forms.TextBox networkusagesent;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button showhidesplit;
         private System.Windows.Forms.Label label16;
@@ -874,7 +908,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox ramUsageBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox cpuUsageBox;
         private System.Windows.Forms.Label label11;
@@ -885,6 +919,9 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
         private System.Windows.Forms.Timer PerformanceInformationTimer;
+        private System.Windows.Forms.TextBox networkusagereceived;
+        private System.Windows.Forms.Label NetworkReceivedLabel;
+        private System.Windows.Forms.Label label2;
     }
 }
 
