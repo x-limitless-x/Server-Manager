@@ -38,6 +38,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -127,6 +128,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mumble_banner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\map-712x462.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1000px-Circle-redo.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-_database_hosting_network_server-09-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11970899991672979969brunurb_Retro_Joystick_002.svg.med.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Configuracion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\The tail end of milky way over Apollo bay.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\27 - uMwtJTu.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

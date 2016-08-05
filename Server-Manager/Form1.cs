@@ -12,10 +12,8 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Threading;
 using System.Net.NetworkInformation;
-
-
-
-
+using System.ServiceProcess;
+using System.Runtime.InteropServices;
 
 namespace Server_Manager
 {
@@ -26,6 +24,11 @@ namespace Server_Manager
         public string performanceCounterSent { get; private set; }
         public int SplitContainerClicked { get; private set; }
         public int ShowHidePerfClicked { get; private set; }
+        public object cpuCounter { get; private set; }
+        public object ramCounter { get; private set; }
+        public string cpuCounterRes { get; private set; }
+        public string ramCounterRes { get; private set; }
+
         public int bytesSentSpeed = 0;
         public int bytesReceivedSpeed = 0;
 
@@ -34,10 +37,26 @@ namespace Server_Manager
             InitializeComponent();
         }
 
+        
+
         private void LoadForm(object sender, EventArgs e)
         {
 
 
+
+            PerformanceInformationTimer.Enabled = true;
+
+            //           Thread sampleThread = new Thread(delegate ()
+            //          {
+
+            //
+
+
+
+
+
+            //        });
+            //      sampleThread.Start();
 
             try
             {
@@ -45,9 +64,10 @@ namespace Server_Manager
 
 
 
-                IPv4InterfaceStatistics interfaceStats = NetworkInterface.GetAllNetworkInterfaces()[0].GetIPv4Statistics();
-                bytesSentSpeed = (int)(interfaceStats.BytesSent - bytesSentSpeed) / 1024;
-                bytesReceivedSpeed = (int)(interfaceStats.BytesReceived - bytesReceivedSpeed) / 1024;
+                IPv4InterfaceStatistics interfaceStats =
+                    NetworkInterface.GetAllNetworkInterfaces()[0].GetIPv4Statistics();
+                bytesSentSpeed = (int) (interfaceStats.BytesSent - bytesSentSpeed)/1024;
+                bytesReceivedSpeed = (int) (interfaceStats.BytesReceived - bytesReceivedSpeed)/1024;
 
 
                 string pubIp = new System.Net.WebClient().DownloadString("https://api.ipify.org");
@@ -69,10 +89,10 @@ namespace Server_Manager
 
             }
         }
+    
 
 
-
-        private static String GetSystemUpTimeInfo()
+    private static String GetSystemUpTimeInfo()
         {
 
             try
@@ -153,6 +173,7 @@ namespace Server_Manager
 
             if (SplitContainerClicked == 0)
             {
+                this.BackgroundImage = null;
                 showhidesplit.BackgroundImage = Resources.menucollapseleft;
                 splitContainer2.Location = new System.Drawing.Point(-5, 208);
                 splitContainer2.Width = 832;
@@ -162,9 +183,11 @@ namespace Server_Manager
                 splitContainer1.Panel1.Visible = false;
                 splitContainer1.SplitterDistance = 0;
                 SplitContainerClicked = 1;
+                this.BackgroundImage = Resources._27___uMwtJTu;
             }
             else
             {
+                this.BackgroundImage = null;
                 showhidesplit.BackgroundImage = Resources.menucollapseright;
                 splitContainer2.Location = new System.Drawing.Point(-1, 208);
                 splitContainer2.Width = 689;
@@ -174,6 +197,7 @@ namespace Server_Manager
                 splitContainer1.Panel1.Visible = true;
                 splitContainer1.SplitterDistance = 110;
                 SplitContainerClicked = 0;
+                this.BackgroundImage = Resources._27___uMwtJTu;
             }
         }
 
@@ -206,6 +230,7 @@ namespace Server_Manager
             //Retrieve IP Status
             try
             {
+
                 string localComputerName = Dns.GetHostName();
                 string pubIp = new System.Net.WebClient().DownloadString("https://api.ipify.org");
                 string LocalIp = LocalIPAddress().ToString();
@@ -234,47 +259,10 @@ namespace Server_Manager
             }
 
 
-            if (SplitContainerClicked == 0)
-            {
 
-                showhidesplit.BackgroundImage = Resources.menucollapseleft;
-                showHideGamePanelToolStripMenuItem.Text = "Switch to Minimalist View";
-            }
-            else
-            {
-
-                showhidesplit.BackgroundImage = Resources.menucollapseright;
-                showHideGamePanelToolStripMenuItem.Text = "Switch to Management View";
-            }
         }
 
-        private void Performance_tick(object sender, EventArgs e)
-        {
-            //CPU Usage Retrieval
-            PerformanceCounter cpuCounter = new PerformanceCounter();
-            cpuCounter.CategoryName = "Processor";
-            cpuCounter.CounterName = "% Processor Time";
-            cpuCounter.InstanceName = "_Total";
-            PerformanceCounter ramCounter = new PerformanceCounter("Memory", "Available MBytes");
 
-            var unused = cpuCounter.NextValue(); // first call will always return 0
-            System.Threading.Thread.Sleep(1000); // wait a second, then try again
-            //
-
-            //Start Network Speed Monitoring
-
-            IPv4InterfaceStatistics interfaceStats = NetworkInterface.GetAllNetworkInterfaces()[0].GetIPv4Statistics();
-            bytesSentSpeed = (int)(interfaceStats.BytesSent - bytesSentSpeed) / 1024;
-            bytesReceivedSpeed = (int)(interfaceStats.BytesReceived - bytesReceivedSpeed) / 1024;
-            //Stop Network Speed Monitoring
-
-            currentUptimeLabel.Text = GetSystemUpTimeInfo();
-            cpuUsageBox.Text = (cpuCounter.NextValue() + "%");
-            ramUsageBox.Text = (ramCounter.NextValue() + "MB");
-            networkusagesent.Text = bytesSentSpeed.ToString() +" b/s";
-            networkusagereceived.Text = bytesReceivedSpeed.ToString() + " b/s";
-            
-        }
 
         private void SelectAll_ComputerName(object sender, EventArgs e)
         {
@@ -306,30 +294,37 @@ namespace Server_Manager
         private void MinimalistView_Clicked(object sender, EventArgs e)
         {
             {
-
+                
                 if (SplitContainerClicked == 0)
                 {
+                    this.BackgroundImage = null;
+                    //Change Button Variable for ShowHidePerfClicked to "2"
                     ShowHidePerfClicked = 2;
+                    //Change Text on Show / Hide Performance Button in Main Form to "Show Performance Information"
                     showhideperf_button.Text = "Show Performance Information";
                     showhidesplit.BackgroundImage = Resources.menucollapseleft;
-                    splitContainer2.Location = new System.Drawing.Point(-5, 208);
+ //                   splitContainer2.Location = new System.Drawing.Point(-5, 208);
                     splitContainer2.Width = 832;
                     splitContainer2.Panel1.Visible = false;
+                    
 
 
+                    SplitContainerClicked = 1;
                     splitContainer1.Location = new System.Drawing.Point(-30, 67);
                     splitContainer1.Width = 832;
-                    splitContainer1.Panel1.Visible = false;
+                    
                     splitContainer1.SplitterDistance = 0;
-                    SplitContainerClicked = 1;
-
+                    this.BackgroundImage = null;
+                    splitContainer1.Panel1.Visible = false;
+                    this.BackgroundImage = Resources._27___uMwtJTu;
                 }
                 else
                 {
+                    this.BackgroundImage = null;
                     ShowHidePerfClicked = 1;
                     showhideperf_button.Text = "Hide Performance Information";
                     showhidesplit.BackgroundImage = Resources.menucollapseright;
-                    splitContainer2.Location = new System.Drawing.Point(-1, 208);
+ //                   splitContainer2.Location = new System.Drawing.Point(-1, 208);
                     splitContainer2.Width = 689;
                     splitContainer2.Panel1.Visible = true;
 
@@ -338,6 +333,7 @@ namespace Server_Manager
                     splitContainer1.Panel1.Visible = true;
                     splitContainer1.SplitterDistance = 110;
                     SplitContainerClicked = 0;
+                    this.BackgroundImage = Resources._27___uMwtJTu;
                 }
             }
         }
@@ -375,9 +371,47 @@ namespace Server_Manager
         private void ping_timer(object sender, EventArgs e)
         {
 
-            using (Ping p = new Ping())
+            
+            try
             {
-                currentPing.Text = "Current Ping: " + p.Send("8.8.8.8").RoundtripTime.ToString() + "ms";
+                using (Ping p = new Ping())
+                {
+                    currentPing.Text = "Current Ping: " + p.Send("8.8.8.8").RoundtripTime.ToString() + "ms";
+                }
+                serviceController1.Refresh();
+                pictureBox3.Visible = false;
+                pictureBox2.Visible = true;
+            }
+            catch (Exception)
+            {
+                pictureBox2.Visible = false;
+                pictureBox3.Visible = true;
+                currentPing.Text = "Cannot Ping";
+            }
+           
+
+            //START SERVICE MONITORING
+            switch (serviceController1.Status)
+            {
+                case ServiceControllerStatus.Running:
+                    serviceStatus.Text = "Running";
+                    return;
+                case ServiceControllerStatus.Stopped:
+                    serviceStatus.Text = "Stopped";
+                    return;
+                case ServiceControllerStatus.Paused:
+                    serviceStatus.Text = "Paused";
+                    return;
+                case ServiceControllerStatus.StopPending:
+                    serviceStatus.Text = "Stopping";
+                    return;
+                 case ServiceControllerStatus.StartPending:
+                    serviceStatus.Text = "Starting";
+                    return;
+                default:
+                    serviceStatus.Text = "Status Changing";
+                    return;
+
             }
         }
 
@@ -434,7 +468,35 @@ namespace Server_Manager
             helpToolStripMenuItem.ForeColor = Color.FromArgb(255, 255, 255);
         }
 
-    
+        private void Performance_tick(object sender, EventArgs e)
+        {
+
+            currentUptimeLabel.Text = GetSystemUpTimeInfo();
+
+            //Start Network Speed Monitoring
+
+            if (SplitContainerClicked == 0)
+            {
+
+                showhidesplit.BackgroundImage = Resources.menucollapseleft;
+                showHideGamePanelToolStripMenuItem.Text = "Switch to Minimalist View";
+            }
+            else
+            {
+
+                showhidesplit.BackgroundImage = Resources.menucollapseright;
+                showHideGamePanelToolStripMenuItem.Text = "Switch to Management View";
+            }
+
+
         }
+
+        private void PerformanceWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+
+    }
     }
 
