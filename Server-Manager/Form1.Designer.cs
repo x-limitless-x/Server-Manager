@@ -33,12 +33,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.button3 = new System.Windows.Forms.Button();
-            this.statusStripServerSelection = new System.Windows.Forms.StatusStrip();
-            this.statuslabelServerSelection = new System.Windows.Forms.ToolStripStatusLabel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.CurrentMap = new System.Windows.Forms.Label();
@@ -96,6 +95,7 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label18 = new System.Windows.Forms.Label();
             this.statusStripForm = new System.Windows.Forms.StatusStrip();
+            this.statuslabelServerSelection = new System.Windows.Forms.ToolStripStatusLabel();
             this.currentUptimeLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.pingTimer = new System.Windows.Forms.Timer(this.components);
             this.ConnectivityCheck_Timer = new System.Windows.Forms.Timer(this.components);
@@ -104,12 +104,10 @@
             this.serviceController1 = new System.ServiceProcess.ServiceController();
             this.showhidesplit = new System.Windows.Forms.Button();
             this.uptimeTimer = new System.Windows.Forms.Timer(this.components);
-            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.statusStripServerSelection.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -147,7 +145,6 @@
             this.splitContainer1.Panel1.AutoScroll = true;
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.Transparent;
             this.splitContainer1.Panel1.Controls.Add(this.button3);
-            this.splitContainer1.Panel1.Controls.Add(this.statusStripServerSelection);
             this.splitContainer1.Panel1.Controls.Add(this.button2);
             this.splitContainer1.Panel1.Controls.Add(this.button1);
             // 
@@ -181,7 +178,7 @@
             // 
             // button3
             // 
-            this.button3.AutoEllipsis = true;
+            this.button3.AutoSize = true;
             this.button3.BackColor = System.Drawing.Color.White;
             this.button3.BackgroundImage = global::Server_Manager.Properties.Resources.mumble_banner;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -199,29 +196,9 @@
             this.button3.MouseLeave += new System.EventHandler(this.ReturnToCurrentServerName);
             this.button3.MouseHover += new System.EventHandler(this.MurmurServerMouseEnter);
             // 
-            // statusStripServerSelection
-            // 
-            this.statusStripServerSelection.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusStripServerSelection.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statuslabelServerSelection});
-            this.statusStripServerSelection.Location = new System.Drawing.Point(0, 327);
-            this.statusStripServerSelection.Name = "statusStripServerSelection";
-            this.statusStripServerSelection.Size = new System.Drawing.Size(110, 22);
-            this.statusStripServerSelection.TabIndex = 2;
-            this.statusStripServerSelection.Text = "statusStrip2";
-            // 
-            // statuslabelServerSelection
-            // 
-            this.statuslabelServerSelection.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statuslabelServerSelection.ForeColor = System.Drawing.Color.Black;
-            this.statuslabelServerSelection.Name = "statuslabelServerSelection";
-            this.statuslabelServerSelection.Size = new System.Drawing.Size(95, 17);
-            this.statuslabelServerSelection.Spring = true;
-            this.statuslabelServerSelection.Text = "Project Zomboid";
-            // 
             // button2
             // 
-            this.button2.AutoEllipsis = true;
+            this.button2.AutoSize = true;
             this.button2.BackColor = System.Drawing.Color.Red;
             this.button2.BackgroundImage = global::Server_Manager.Properties.Resources.killingfloor2button;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -239,7 +216,7 @@
             // 
             // button1
             // 
-            this.button1.AutoEllipsis = true;
+            this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.BackgroundImage = global::Server_Manager.Properties.Resources.projectzomboidbutton;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -251,6 +228,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 51);
             this.button1.TabIndex = 0;
+            this.button1.UseCompatibleTextRendering = true;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.MouseEnter += new System.EventHandler(this.ProjectZomboidMouseEnter);
             // 
@@ -271,6 +249,12 @@
             this.testToolStripMenuItem.Text = "Restart Application";
             this.testToolStripMenuItem.ToolTipText = "This Restarts this Application!";
             this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem1
+            // 
+            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(174, 22);
+            this.exitToolStripMenuItem1.Text = "Exit";
             // 
             // pictureBox2
             // 
@@ -883,6 +867,7 @@
             // statusStripForm
             // 
             this.statusStripForm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statuslabelServerSelection,
             this.currentUptimeLabel});
             this.statusStripForm.Location = new System.Drawing.Point(0, 415);
             this.statusStripForm.Name = "statusStripForm";
@@ -890,12 +875,24 @@
             this.statusStripForm.TabIndex = 6;
             this.statusStripForm.Text = "statusStrip1";
             // 
+            // statuslabelServerSelection
+            // 
+            this.statuslabelServerSelection.BackColor = System.Drawing.Color.Transparent;
+            this.statuslabelServerSelection.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.statuslabelServerSelection.BorderStyle = System.Windows.Forms.Border3DStyle.Sunken;
+            this.statuslabelServerSelection.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statuslabelServerSelection.ForeColor = System.Drawing.Color.Black;
+            this.statuslabelServerSelection.Name = "statuslabelServerSelection";
+            this.statuslabelServerSelection.Size = new System.Drawing.Size(98, 17);
+            this.statuslabelServerSelection.Text = "Project Zomboid";
+            // 
             // currentUptimeLabel
             // 
             this.currentUptimeLabel.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.currentUptimeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.currentUptimeLabel.Image = global::Server_Manager.Properties.Resources.uptime;
             this.currentUptimeLabel.Name = "currentUptimeLabel";
-            this.currentUptimeLabel.Size = new System.Drawing.Size(134, 17);
+            this.currentUptimeLabel.Size = new System.Drawing.Size(150, 17);
             this.currentUptimeLabel.Text = "Gathering Information...";
             // 
             // pingTimer
@@ -937,20 +934,13 @@
             // uptimeTimer
             // 
             this.uptimeTimer.Enabled = true;
-            this.uptimeTimer.Interval = 700;
+            this.uptimeTimer.Interval = 1000;
             this.uptimeTimer.Tick += new System.EventHandler(this.uptime_tick);
-            // 
-            // exitToolStripMenuItem1
-            // 
-            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(174, 22);
-            this.exitToolStripMenuItem1.Text = "Exit";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.BackColor = System.Drawing.Color.Gray;
             this.BackgroundImage = global::Server_Manager.Properties.Resources._27___uMwtJTu;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(804, 437);
@@ -975,8 +965,6 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.statusStripServerSelection.ResumeLayout(false);
-            this.statusStripServerSelection.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1031,8 +1019,6 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.TextBox computernamebox;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.StatusStrip statusStripServerSelection;
-        private System.Windows.Forms.ToolStripStatusLabel statuslabelServerSelection;
         private System.Windows.Forms.TextBox networkusagesent;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button showhidesplit;
@@ -1072,6 +1058,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Timer uptimeTimer;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripStatusLabel statuslabelServerSelection;
     }
 }
 
