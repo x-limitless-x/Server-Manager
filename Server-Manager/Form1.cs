@@ -110,6 +110,7 @@ namespace Server_Manager
             }
         }
 
+
         private static TimeSpan GetSystemUpTime()
         {
             try
@@ -164,6 +165,63 @@ namespace Server_Manager
             statuslabelServerSelection.Text = "Murmur Server";
         }
 
+        //https://social.msdn.microsoft.com/Forums/windows/en-US/c27693d2-9b4e-4395-9e90-402a6af96307/splitcontainer-flickering-issue-while-resizing-it?forum=winforms
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+
+        private void MinimalistView_Clicked(object sender, EventArgs e)
+        {
+            {
+
+                if (SplitContainerClicked == 0)
+                {
+ //                   this.BackgroundImage = null;
+                    //Change Button Variable for ShowHidePerfClicked to "2"
+                    ShowHidePerfClicked = 2;
+                    //Change Text on Show / Hide Performance Button in Main Form to "Show Performance Information"
+                    showhideperf_button.Text = "Show Performance Information";
+                    showhidesplit.BackgroundImage = Resources.menucollapseleft;
+                    //                   splitContainer2.Location = new System.Drawing.Point(-5, 208);
+                    splitContainer2.Width = 832;
+                    splitContainer2.Panel1.Visible = false;
+
+
+
+                    SplitContainerClicked = 1;
+                    splitContainer1.Location = new System.Drawing.Point(-30, 67);
+                    splitContainer1.Width = 832;
+
+                    splitContainer1.SplitterDistance = 0;
+
+                    splitContainer1.Panel1.Visible = false;
+//                    this.BackgroundImage = Resources._27___uMwtJTu;
+                }
+                else
+                {
+//                    this.BackgroundImage = null;
+                    ShowHidePerfClicked = 1;
+                    showhideperf_button.Text = "Hide Performance Information";
+                    showhidesplit.BackgroundImage = Resources.menucollapseright;
+                    //                   splitContainer2.Location = new System.Drawing.Point(-1, 208);
+                    splitContainer2.Width = 689;
+                    splitContainer2.Panel1.Visible = true;
+
+                    splitContainer1.Location = new System.Drawing.Point(2, 67);
+                    splitContainer1.Width = 802;
+                    splitContainer1.Panel1.Visible = true;
+                    splitContainer1.SplitterDistance = 110;
+                    SplitContainerClicked = 0;
+ //                   this.BackgroundImage = Resources._27___uMwtJTu;
+                }
+            }
+        }
 
         private void OpenClosesplitcontainer(object sender, EventArgs e)
         {
@@ -173,7 +231,7 @@ namespace Server_Manager
 
             if (SplitContainerClicked == 0)
             {
-                this.BackgroundImage = null;
+//                this.BackgroundImage = null;
                 showhidesplit.BackgroundImage = Resources.menucollapseleft;
                 splitContainer2.Location = new System.Drawing.Point(-5, 208);
                 splitContainer2.Width = 832;
@@ -183,11 +241,11 @@ namespace Server_Manager
                 splitContainer1.Panel1.Visible = false;
                 splitContainer1.SplitterDistance = 0;
                 SplitContainerClicked = 1;
-                this.BackgroundImage = Resources._27___uMwtJTu;
+ //               this.BackgroundImage = Resources._27___uMwtJTu;
             }
             else
             {
-                this.BackgroundImage = null;
+//                this.BackgroundImage = null;
                 showhidesplit.BackgroundImage = Resources.menucollapseright;
                 splitContainer2.Location = new System.Drawing.Point(-1, 208);
                 splitContainer2.Width = 689;
@@ -197,7 +255,7 @@ namespace Server_Manager
                 splitContainer1.Panel1.Visible = true;
                 splitContainer1.SplitterDistance = 110;
                 SplitContainerClicked = 0;
-                this.BackgroundImage = Resources._27___uMwtJTu;
+ //               this.BackgroundImage = Resources._27___uMwtJTu;
             }
         }
 
@@ -291,52 +349,7 @@ namespace Server_Manager
 
         }
 
-        private void MinimalistView_Clicked(object sender, EventArgs e)
-        {
-            {
-                
-                if (SplitContainerClicked == 0)
-                {
-                    this.BackgroundImage = null;
-                    //Change Button Variable for ShowHidePerfClicked to "2"
-                    ShowHidePerfClicked = 2;
-                    //Change Text on Show / Hide Performance Button in Main Form to "Show Performance Information"
-                    showhideperf_button.Text = "Show Performance Information";
-                    showhidesplit.BackgroundImage = Resources.menucollapseleft;
- //                   splitContainer2.Location = new System.Drawing.Point(-5, 208);
-                    splitContainer2.Width = 832;
-                    splitContainer2.Panel1.Visible = false;
-                    
 
-
-                    SplitContainerClicked = 1;
-                    splitContainer1.Location = new System.Drawing.Point(-30, 67);
-                    splitContainer1.Width = 832;
-                    
-                    splitContainer1.SplitterDistance = 0;
-                    this.BackgroundImage = null;
-                    splitContainer1.Panel1.Visible = false;
-                    this.BackgroundImage = Resources._27___uMwtJTu;
-                }
-                else
-                {
-                    this.BackgroundImage = null;
-                    ShowHidePerfClicked = 1;
-                    showhideperf_button.Text = "Hide Performance Information";
-                    showhidesplit.BackgroundImage = Resources.menucollapseright;
- //                   splitContainer2.Location = new System.Drawing.Point(-1, 208);
-                    splitContainer2.Width = 689;
-                    splitContainer2.Panel1.Visible = true;
-
-                    splitContainer1.Location = new System.Drawing.Point(2, 67);
-                    splitContainer1.Width = 802;
-                    splitContainer1.Panel1.Visible = true;
-                    splitContainer1.SplitterDistance = 110;
-                    SplitContainerClicked = 0;
-                    this.BackgroundImage = Resources._27___uMwtJTu;
-                }
-            }
-        }
 
         private void GameServerSettings_Clicked(object sender, EventArgs e)
         {
@@ -470,9 +483,7 @@ namespace Server_Manager
 
         private void Performance_tick(object sender, EventArgs e)
         {
-
-            currentUptimeLabel.Text = GetSystemUpTimeInfo();
-
+            
             //Start Network Speed Monitoring
 
             if (SplitContainerClicked == 0)
@@ -496,7 +507,10 @@ namespace Server_Manager
 
         }
 
-
+        private void uptime_tick(object sender, EventArgs e)
+        {
+            currentUptimeLabel.Text = GetSystemUpTimeInfo();
+        }
     }
     }
 

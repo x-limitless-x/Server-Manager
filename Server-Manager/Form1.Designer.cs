@@ -103,6 +103,8 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.serviceController1 = new System.ServiceProcess.ServiceController();
             this.showhidesplit = new System.Windows.Forms.Button();
+            this.uptimeTimer = new System.Windows.Forms.Timer(this.components);
+            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -255,9 +257,11 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.testToolStripMenuItem});
+            this.testToolStripMenuItem,
+            this.exitToolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(175, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(175, 48);
+            this.contextMenuStrip1.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // testToolStripMenuItem
             // 
@@ -311,6 +315,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImage = global::Server_Manager.Properties.Resources.map_712x462;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Location = new System.Drawing.Point(554, 55);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(98, 87);
@@ -908,7 +913,6 @@
             // PerformanceInformationTimer
             // 
             this.PerformanceInformationTimer.Enabled = true;
-            this.PerformanceInformationTimer.Interval = 50;
             this.PerformanceInformationTimer.Tick += new System.EventHandler(this.Performance_tick);
             // 
             // backgroundWorker1
@@ -929,6 +933,18 @@
             this.showhidesplit.TabIndex = 4;
             this.showhidesplit.UseVisualStyleBackColor = true;
             this.showhidesplit.Click += new System.EventHandler(this.OpenClosesplitcontainer);
+            // 
+            // uptimeTimer
+            // 
+            this.uptimeTimer.Enabled = true;
+            this.uptimeTimer.Interval = 700;
+            this.uptimeTimer.Tick += new System.EventHandler(this.uptime_tick);
+            // 
+            // exitToolStripMenuItem1
+            // 
+            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(174, 22);
+            this.exitToolStripMenuItem1.Text = "Exit";
             // 
             // Form1
             // 
@@ -1054,6 +1070,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Timer uptimeTimer;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
     }
 }
 
