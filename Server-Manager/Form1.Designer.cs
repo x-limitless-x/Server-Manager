@@ -38,6 +38,9 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.CurrentMap = new System.Windows.Forms.Label();
@@ -54,9 +57,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.currentApplicationSelection = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.diskusageBox = new System.Windows.Forms.TextBox();
             this.networkusagereceived = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.cpuUsageBox = new System.Windows.Forms.TextBox();
@@ -68,6 +70,14 @@
             this.ramUsageBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.NetworkReceivedLabel = new System.Windows.Forms.Label();
+            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.viewFullPerformanceWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.last7DaysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.last14DaysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.last30DaysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewPerformanceOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showhideperf_button = new System.Windows.Forms.Button();
             this.currentPing = new System.Windows.Forms.Label();
             this.serviceStatus = new System.Windows.Forms.Label();
@@ -115,6 +125,7 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.statusStripForm.SuspendLayout();
@@ -153,6 +164,9 @@
             this.splitContainer1.Panel2.AutoScrollMargin = new System.Drawing.Size(0, 15);
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.Transparent;
             this.splitContainer1.Panel2.ContextMenuStrip = this.contextMenuStrip1;
+            this.splitContainer1.Panel2.Controls.Add(this.linkLabel4);
+            this.splitContainer1.Panel2.Controls.Add(this.linkLabel3);
+            this.splitContainer1.Panel2.Controls.Add(this.linkLabel2);
             this.splitContainer1.Panel2.Controls.Add(this.pictureBox2);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
             this.splitContainer1.Panel2.Controls.Add(this.CurrentMap);
@@ -252,9 +266,48 @@
             // 
             // exitToolStripMenuItem1
             // 
+            this.exitToolStripMenuItem1.Image = global::Server_Manager.Properties.Resources.x_1152114_960_720;
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
             this.exitToolStripMenuItem1.Size = new System.Drawing.Size(174, 22);
             this.exitToolStripMenuItem1.Text = "Exit";
+            // 
+            // linkLabel4
+            // 
+            this.linkLabel4.ActiveLinkColor = System.Drawing.Color.White;
+            this.linkLabel4.AutoSize = true;
+            this.linkLabel4.LinkColor = System.Drawing.Color.White;
+            this.linkLabel4.Location = new System.Drawing.Point(237, 27);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(41, 13);
+            this.linkLabel4.TabIndex = 51;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "Restart";
+            // 
+            // linkLabel3
+            // 
+            this.linkLabel3.ActiveLinkColor = System.Drawing.Color.Cyan;
+            this.linkLabel3.AutoSize = true;
+            this.linkLabel3.LinkColor = System.Drawing.Color.White;
+            this.linkLabel3.Location = new System.Drawing.Point(202, 27);
+            this.linkLabel3.Name = "linkLabel3";
+            this.linkLabel3.Size = new System.Drawing.Size(29, 13);
+            this.linkLabel3.TabIndex = 50;
+            this.linkLabel3.TabStop = true;
+            this.linkLabel3.Text = "Stop";
+            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.servicestop_click);
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.ActiveLinkColor = System.Drawing.Color.Cyan;
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.LinkColor = System.Drawing.Color.White;
+            this.linkLabel2.Location = new System.Drawing.Point(167, 27);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(29, 13);
+            this.linkLabel2.TabIndex = 49;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Start";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // pictureBox2
             // 
@@ -436,9 +489,8 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.label11);
             this.splitContainer2.Panel1.Controls.Add(this.label13);
-            this.splitContainer2.Panel1.Controls.Add(this.textBox6);
+            this.splitContainer2.Panel1.Controls.Add(this.diskusageBox);
             this.splitContainer2.Panel1.Controls.Add(this.networkusagereceived);
             this.splitContainer2.Panel1.Controls.Add(this.label14);
             this.splitContainer2.Panel1.Controls.Add(this.cpuUsageBox);
@@ -450,6 +502,7 @@
             this.splitContainer2.Panel1.Controls.Add(this.ramUsageBox);
             this.splitContainer2.Panel1.Controls.Add(this.label2);
             this.splitContainer2.Panel1.Controls.Add(this.NetworkReceivedLabel);
+            this.splitContainer2.Panel1.Controls.Add(this.linkLabel5);
             // 
             // splitContainer2.Panel2
             // 
@@ -457,18 +510,6 @@
             this.splitContainer2.Size = new System.Drawing.Size(689, 138);
             this.splitContainer2.SplitterDistance = 105;
             this.splitContainer2.TabIndex = 40;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(270, 12);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(111, 20);
-            this.label11.TabIndex = 31;
-            this.label11.Text = "Performance";
             // 
             // label13
             // 
@@ -482,14 +523,14 @@
             this.label13.TabIndex = 39;
             this.label13.Text = "Main Disk Usage:";
             // 
-            // textBox6
+            // diskusageBox
             // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Location = new System.Drawing.Point(513, 55);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 38;
+            this.diskusageBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.diskusageBox.Location = new System.Drawing.Point(513, 55);
+            this.diskusageBox.Name = "diskusageBox";
+            this.diskusageBox.ReadOnly = true;
+            this.diskusageBox.Size = new System.Drawing.Size(100, 20);
+            this.diskusageBox.TabIndex = 38;
             // 
             // networkusagereceived
             // 
@@ -506,7 +547,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(424, 34);
+            this.label14.Location = new System.Drawing.Point(424, 30);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(84, 15);
             this.label14.TabIndex = 37;
@@ -591,7 +632,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Aqua;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(265, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 15);
@@ -603,12 +644,82 @@
             this.NetworkReceivedLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.NetworkReceivedLabel.AutoSize = true;
             this.NetworkReceivedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NetworkReceivedLabel.ForeColor = System.Drawing.Color.Lime;
+            this.NetworkReceivedLabel.ForeColor = System.Drawing.Color.White;
             this.NetworkReceivedLabel.Location = new System.Drawing.Point(332, 63);
             this.NetworkReceivedLabel.Name = "NetworkReceivedLabel";
             this.NetworkReceivedLabel.Size = new System.Drawing.Size(66, 15);
             this.NetworkReceivedLabel.TabIndex = 43;
             this.NetworkReceivedLabel.Text = "Received";
+            // 
+            // linkLabel5
+            // 
+            this.linkLabel5.ActiveLinkColor = System.Drawing.Color.Cyan;
+            this.linkLabel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.linkLabel5.AutoSize = true;
+            this.linkLabel5.ContextMenuStrip = this.contextMenuStrip2;
+            this.linkLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel5.LinkColor = System.Drawing.Color.White;
+            this.linkLabel5.Location = new System.Drawing.Point(270, 12);
+            this.linkLabel5.Name = "linkLabel5";
+            this.linkLabel5.Size = new System.Drawing.Size(111, 20);
+            this.linkLabel5.TabIndex = 44;
+            this.linkLabel5.TabStop = true;
+            this.linkLabel5.Text = "Performance";
+            this.linkLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkLabel5.Click += new System.EventHandler(this.ExtendPerformance_Click);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewFullPerformanceWindowToolStripMenuItem,
+            this.reportingToolStripMenuItem,
+            this.viewPerformanceOptionsToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(260, 92);
+            // 
+            // viewFullPerformanceWindowToolStripMenuItem
+            // 
+            this.viewFullPerformanceWindowToolStripMenuItem.Name = "viewFullPerformanceWindowToolStripMenuItem";
+            this.viewFullPerformanceWindowToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
+            this.viewFullPerformanceWindowToolStripMenuItem.Text = "View Extended Performance Details";
+            this.viewFullPerformanceWindowToolStripMenuItem.Click += new System.EventHandler(this.ExtendPerformance_Click);
+            // 
+            // reportingToolStripMenuItem
+            // 
+            this.reportingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.last7DaysToolStripMenuItem,
+            this.last14DaysToolStripMenuItem,
+            this.last30DaysToolStripMenuItem});
+            this.reportingToolStripMenuItem.Name = "reportingToolStripMenuItem";
+            this.reportingToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
+            this.reportingToolStripMenuItem.Text = "Generate Report";
+            // 
+            // last7DaysToolStripMenuItem
+            // 
+            this.last7DaysToolStripMenuItem.Name = "last7DaysToolStripMenuItem";
+            this.last7DaysToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.last7DaysToolStripMenuItem.Text = "Last 7 Days";
+            this.last7DaysToolStripMenuItem.ToolTipText = "View a Report Generated from the Past 7 Days of Use";
+            // 
+            // last14DaysToolStripMenuItem
+            // 
+            this.last14DaysToolStripMenuItem.Name = "last14DaysToolStripMenuItem";
+            this.last14DaysToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.last14DaysToolStripMenuItem.Text = "Last 14 Days";
+            this.last14DaysToolStripMenuItem.ToolTipText = "View a Report Generated from the Past 14 Days of Use";
+            // 
+            // last30DaysToolStripMenuItem
+            // 
+            this.last30DaysToolStripMenuItem.Name = "last30DaysToolStripMenuItem";
+            this.last30DaysToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.last30DaysToolStripMenuItem.Text = "Last 30 Days";
+            this.last30DaysToolStripMenuItem.ToolTipText = "View a Report Generated from the Past 30 Days of Use";
+            // 
+            // viewPerformanceOptionsToolStripMenuItem
+            // 
+            this.viewPerformanceOptionsToolStripMenuItem.Name = "viewPerformanceOptionsToolStripMenuItem";
+            this.viewPerformanceOptionsToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
+            this.viewPerformanceOptionsToolStripMenuItem.Text = "View Performance Options";
             // 
             // showhideperf_button
             // 
@@ -705,12 +816,14 @@
             // 
             // newServerWizardToolStripMenuItem
             // 
+            this.newServerWizardToolStripMenuItem.Image = global::Server_Manager.Properties.Resources.wand_307272_960_720;
             this.newServerWizardToolStripMenuItem.Name = "newServerWizardToolStripMenuItem";
             this.newServerWizardToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.newServerWizardToolStripMenuItem.Text = "New Server Wizard";
             // 
             // openToolStripMenuItem
             // 
+            this.openToolStripMenuItem.Image = global::Server_Manager.Properties.Resources.uploading_files;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.openToolStripMenuItem.Text = "Open";
@@ -719,18 +832,21 @@
             // 
             this.saveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveAsToolStripMenuItem});
+            this.saveToolStripMenuItem.Image = global::Server_Manager.Properties.Resources.floppy_disk_save_512;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // saveAsToolStripMenuItem
             // 
+            this.saveAsToolStripMenuItem.Image = global::Server_Manager.Properties.Resources.saveas_icon;
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.saveAsToolStripMenuItem.Text = "Save As";
             // 
             // exitToolStripMenuItem
             // 
+            this.exitToolStripMenuItem.Image = global::Server_Manager.Properties.Resources.x_1152114_960_720;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.exitToolStripMenuItem.Text = "Exit";
@@ -753,12 +869,14 @@
             // 
             // cutToolStripMenuItem
             // 
+            this.cutToolStripMenuItem.Image = global::Server_Manager.Properties.Resources._2000px_Scissors_icon_black_svg;
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.cutToolStripMenuItem.Text = "Cut";
             // 
             // copyToolStripMenuItem
             // 
+            this.copyToolStripMenuItem.Image = global::Server_Manager.Properties.Resources._2000px_Edit_copy_svg;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.copyToolStripMenuItem.Text = "Copy";
@@ -766,6 +884,7 @@
             // 
             // pasteToolStripMenuItem
             // 
+            this.pasteToolStripMenuItem.Image = global::Server_Manager.Properties.Resources._2000px_Gnome_edit_paste_svg;
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.pasteToolStripMenuItem.Text = "Paste";
@@ -814,6 +933,7 @@
             // 
             // showHideGamePanelToolStripMenuItem
             // 
+            this.showHideGamePanelToolStripMenuItem.Image = global::Server_Manager.Properties.Resources.eyemini;
             this.showHideGamePanelToolStripMenuItem.Name = "showHideGamePanelToolStripMenuItem";
             this.showHideGamePanelToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.showHideGamePanelToolStripMenuItem.Text = "Switch to Minimalist View";
@@ -835,12 +955,14 @@
             // 
             // websiteToolStripMenuItem
             // 
+            this.websiteToolStripMenuItem.Image = global::Server_Manager.Properties.Resources.Globe_icon_4_svg;
             this.websiteToolStripMenuItem.Name = "websiteToolStripMenuItem";
             this.websiteToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.websiteToolStripMenuItem.Text = "Website";
             // 
             // aboutToolStripMenuItem
             // 
+            this.aboutToolStripMenuItem.Image = global::Server_Manager.Properties.Resources.Infobox_info_icon_svg;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.aboutToolStripMenuItem.Text = "About";
@@ -940,6 +1062,7 @@
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Gray;
             this.BackgroundImage = global::Server_Manager.Properties.Resources._27___uMwtJTu;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -955,8 +1078,11 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "-=Game Server Manager=-";
             this.Load += new System.EventHandler(this.LoadForm);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -973,6 +1099,7 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -1031,14 +1158,13 @@
         private System.Windows.Forms.ToolStripStatusLabel currentUptimeLabel;
         private System.Windows.Forms.Timer pingTimer;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox diskusageBox;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox ramUsageBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox cpuUsageBox;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showHideGamePanelToolStripMenuItem;
@@ -1059,6 +1185,17 @@
         private System.Windows.Forms.Timer uptimeTimer;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
         private System.Windows.Forms.ToolStripStatusLabel statuslabelServerSelection;
+        private System.Windows.Forms.LinkLabel linkLabel4;
+        private System.Windows.Forms.LinkLabel linkLabel3;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel linkLabel5;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem viewFullPerformanceWindowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem last7DaysToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem last14DaysToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem last30DaysToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewPerformanceOptionsToolStripMenuItem;
     }
 }
 

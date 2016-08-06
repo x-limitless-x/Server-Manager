@@ -12,8 +12,12 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Threading;
 using System.Net.NetworkInformation;
+using System.Runtime.CompilerServices;
 using System.ServiceProcess;
 using System.Runtime.InteropServices;
+using Humanizer;
+using System.Management;
+using Microsoft.VisualBasic;
 
 namespace Server_Manager
 {
@@ -24,10 +28,13 @@ namespace Server_Manager
         public string performanceCounterSent { get; private set; }
         public int SplitContainerClicked { get; private set; }
         public int ShowHidePerfClicked { get; private set; }
-        public object cpuCounter { get; private set; }
-        public object ramCounter { get; private set; }
-        public string cpuCounterRes { get; private set; }
-        public string ramCounterRes { get; private set; }
+
+        private PerformanceCounter cpuPerformanceCounter = new PerformanceCounter();
+        private PerformanceCounter memoryPerformanceCounter = new PerformanceCounter();
+        private PerformanceCounter diskReadsPerformanceCounter = new PerformanceCounter();
+        private PerformanceCounter diskWritesPerformanceCounter = new PerformanceCounter();
+        private PerformanceCounter diskTransfersPerformanceCounter = new PerformanceCounter();
+
 
         public int bytesSentSpeed = 0;
         public int bytesReceivedSpeed = 0;
@@ -35,6 +42,7 @@ namespace Server_Manager
         public Form1()
         {
             InitializeComponent();
+            PerformanceWindowOpen = 0;
         }
 
         
@@ -46,6 +54,7 @@ namespace Server_Manager
 
             PerformanceInformationTimer.Enabled = true;
 
+            InitPerformanceCounters();
             //           Thread sampleThread = new Thread(delegate ()
             //          {
 
@@ -89,10 +98,11 @@ namespace Server_Manager
 
             }
         }
-    
 
 
-    private static String GetSystemUpTimeInfo()
+
+
+        private static String GetSystemUpTimeInfo()
         {
 
             try
@@ -176,6 +186,8 @@ namespace Server_Manager
             }
         }
 
+        public int PerformanceWindowOpen { get; private set; }
+
         private void MinimalistView_Clicked(object sender, EventArgs e)
         {
             {
@@ -188,6 +200,8 @@ namespace Server_Manager
                     //Change Text on Show / Hide Performance Button in Main Form to "Show Performance Information"
                     showhideperf_button.Text = "Show Performance Information";
                     showhidesplit.BackgroundImage = Resources.menucollapseleft;
+                    showHideGamePanelToolStripMenuItem.Image = Resources.eyemgmt;
+
                     //                   splitContainer2.Location = new System.Drawing.Point(-5, 208);
                     splitContainer2.Width = 832;
                     splitContainer2.Panel1.Visible = false;
@@ -209,6 +223,8 @@ namespace Server_Manager
                     ShowHidePerfClicked = 1;
                     showhideperf_button.Text = "Hide Performance Information";
                     showhidesplit.BackgroundImage = Resources.menucollapseright;
+                    showHideGamePanelToolStripMenuItem.Image = Resources.eyemini;
+
                     //                   splitContainer2.Location = new System.Drawing.Point(-1, 208);
                     splitContainer2.Width = 689;
                     splitContainer2.Panel1.Visible = true;
@@ -297,6 +313,8 @@ namespace Server_Manager
                 computernamebox.Text = localComputerName;
                 publicipaddressbox.Text = pubIp;
                 localipaddressbox.Text = LocalIp;
+                publicipaddressbox.ForeColor = Color.White;
+                localipaddressbox.ForeColor = Color.White;
             }
             //            catch (SocketException ex)
             //           {
@@ -304,11 +322,12 @@ namespace Server_Manager
             //                localipaddressbox.Text = "Cannot Retrieve Your IP";
             //                Thread.Sleep(500);
             //            }
-            catch (Exception ex)
+            catch (Exception)
             {
-
                 publicipaddressbox.Text = "No Connectivity";
                 localipaddressbox.Text = "No Connectivity";
+                publicipaddressbox.ForeColor = Color.Crimson;
+                localipaddressbox.ForeColor = Color.Crimson;
 
                 //catch all other exceptions
 
@@ -383,23 +402,25 @@ namespace Server_Manager
 
         private void ping_timer(object sender, EventArgs e)
         {
+            currentPing.ForeColor = Color.White;
 
-            
             try
             {
                 using (Ping p = new Ping())
                 {
-                    currentPing.Text = "Current Ping: " + p.Send("8.8.8.8").RoundtripTime.ToString() + "ms";
+                    currentPing.Text = "Current Ping: " + p.Send("4.2.2.1").RoundtripTime.ToString() + "ms";
                 }
                 serviceController1.Refresh();
                 pictureBox3.Visible = false;
                 pictureBox2.Visible = true;
+                currentPing.ForeColor = Color.White;
             }
             catch (Exception)
             {
                 pictureBox2.Visible = false;
                 pictureBox3.Visible = true;
                 currentPing.Text = "Cannot Ping";
+                currentPing.ForeColor = Color.Crimson;
             }
            
 
@@ -424,6 +445,7 @@ namespace Server_Manager
                 default:
                     serviceStatus.Text = "Status Changing";
                     return;
+
 
             }
         }
@@ -481,9 +503,58 @@ namespace Server_Manager
             helpToolStripMenuItem.ForeColor = Color.FromArgb(255, 255, 255);
         }
 
+        private void InitPerformanceCounters()
+        {
+
+            this.cpuPerformanceCounter.CategoryName = "Processor";
+            this.cpuPerformanceCounter.CounterName = "% Processor Time";
+            this.cpuPerformanceCounter.InstanceName = "_Total";
+
+            this.memoryPerformanceCounter.CategoryName = "Memory";
+            this.memoryPerformanceCounter.CounterName = "Available MBytes";
+
+
+            this.diskReadsPerformanceCounter.CategoryName = "PhysicalDisk";
+            this.diskReadsPerformanceCounter.CounterName = "Disk Reads/sec";
+            this.diskReadsPerformanceCounter.InstanceName = "_Total";
+
+            this.diskWritesPerformanceCounter.CategoryName = "PhysicalDisk";
+            this.diskWritesPerformanceCounter.CounterName = "Disk Writes/sec";
+            this.diskWritesPerformanceCounter.InstanceName = "_Total";
+
+            this.diskTransfersPerformanceCounter.CategoryName = "PhysicalDisk";
+            this.diskTransfersPerformanceCounter.CounterName = "Disk Transfers/sec";
+            this.diskTransfersPerformanceCounter.InstanceName = "_Total";
+
+
+        }
+
+
         private void Performance_tick(object sender, EventArgs e)
         {
-            
+
+            try
+            {
+                //cpuPerformanceCounter / Environment.ProcessorCount
+                
+
+                var currentCpuUsage = this.cpuPerformanceCounter.NextValue().ToString("#.#") + "%";
+
+                var currentMemoryUsage = this.memoryPerformanceCounter.NextValue().ToString("# MB");
+                var currentDiskTransfers = this.diskTransfersPerformanceCounter.NextValue().ToString("# MB");
+
+
+                
+
+                cpuUsageBox.Text = currentCpuUsage;
+                ramUsageBox.Text = currentMemoryUsage;
+                diskusageBox.Text = currentDiskTransfers;
+
+            }
+            catch (Exception)
+            {
+
+            }
             //Start Network Speed Monitoring
 
             if (SplitContainerClicked == 0)
@@ -510,6 +581,52 @@ namespace Server_Manager
         private void uptime_tick(object sender, EventArgs e)
         {
             currentUptimeLabel.Text = GetSystemUpTimeInfo();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+       {
+            try
+            {
+                serviceController1.Start();
+                serviceController1.WaitForStatus(desiredStatus: ServiceControllerStatus.Running);
+            }
+            catch (Exception)
+            {
+                
+                
+            }
+
+        }
+
+        private void servicestop_click(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                serviceController1.Stop();
+                serviceController1.WaitForStatus(desiredStatus: ServiceControllerStatus.Stopped);
+            }
+            catch (Exception)
+            {
+                
+                
+            }
+            
+        }
+
+        private void ExtendPerformance_Click(object sender, EventArgs e)
+        {
+            if (System.Windows.Forms.Application.OpenForms["ExtendedPeformanceWindow"] as ExtendedPeformanceWindow != null)
+            {
+                return;
+                
+            }
+            else
+            {
+                ExtendedPeformanceWindow form = new ExtendedPeformanceWindow();
+                form.Show(this);
+            }
+
+
         }
     }
     }

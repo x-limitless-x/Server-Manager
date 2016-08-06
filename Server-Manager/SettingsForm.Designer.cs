@@ -138,6 +138,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(222, 32);
             this.comboBox1.TabIndex = 36;
+            this.comboBox1.Text = global::Server_Manager.Properties.Settings.Default.Setting;
             // 
             // SettingsForm
             // 

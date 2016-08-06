@@ -93,6 +93,36 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2000px_Edit_copy_svg {
+            get {
+                object obj = ResourceManager.GetObject("2000px-Edit-copy.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2000px_Gnome_edit_paste_svg {
+            get {
+                object obj = ResourceManager.GetObject("2000px-Gnome-edit-paste.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2000px_Scissors_icon_black_svg {
+            get {
+                object obj = ResourceManager.GetObject("2000px-Scissors_icon_black.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _27___uMwtJTu {
             get {
                 object obj = ResourceManager.GetObject("27 - uMwtJTu", resourceCulture);
@@ -106,6 +136,56 @@ namespace Server_Manager.Properties {
         internal static System.Drawing.Bitmap Configuracion {
             get {
                 object obj = ResourceManager.GetObject("Configuracion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eyemgmt {
+            get {
+                object obj = ResourceManager.GetObject("eyemgmt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eyemini {
+            get {
+                object obj = ResourceManager.GetObject("eyemini", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap floppy_disk_save_512 {
+            get {
+                object obj = ResourceManager.GetObject("floppy_disk_save-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Globe_icon_4_svg {
+            get {
+                object obj = ResourceManager.GetObject("Globe_icon_4.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Infobox_info_icon_svg {
+            get {
+                object obj = ResourceManager.GetObject("Infobox_info_icon.svg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,6 +273,16 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap saveas_icon {
+            get {
+                object obj = ResourceManager.GetObject("saveas_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap The_tail_end_of_milky_way_over_Apollo_bay {
             get {
                 object obj = ResourceManager.GetObject("The tail end of milky way over Apollo bay", resourceCulture);
@@ -203,9 +293,39 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap uploading_files {
+            get {
+                object obj = ResourceManager.GetObject("uploading-files", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap uptime {
             get {
                 object obj = ResourceManager.GetObject("uptime", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wand_307272_960_720 {
+            get {
+                object obj = ResourceManager.GetObject("wand-307272_960_720", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap x_1152114_960_720 {
+            get {
+                object obj = ResourceManager.GetObject("x-1152114_960_720", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
