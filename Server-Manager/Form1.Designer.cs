@@ -114,6 +114,7 @@
             this.serviceController1 = new System.ServiceProcess.ServiceController();
             this.showhidesplit = new System.Windows.Forms.Button();
             this.uptimeTimer = new System.Windows.Forms.Timer(this.components);
+            this.viewExtendedPerformanceDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -675,7 +676,7 @@
             this.reportingToolStripMenuItem,
             this.viewPerformanceOptionsToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(260, 92);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(260, 70);
             // 
             // viewFullPerformanceWindowToolStripMenuItem
             // 
@@ -697,21 +698,21 @@
             // last7DaysToolStripMenuItem
             // 
             this.last7DaysToolStripMenuItem.Name = "last7DaysToolStripMenuItem";
-            this.last7DaysToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.last7DaysToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.last7DaysToolStripMenuItem.Text = "Last 7 Days";
             this.last7DaysToolStripMenuItem.ToolTipText = "View a Report Generated from the Past 7 Days of Use";
             // 
             // last14DaysToolStripMenuItem
             // 
             this.last14DaysToolStripMenuItem.Name = "last14DaysToolStripMenuItem";
-            this.last14DaysToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.last14DaysToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.last14DaysToolStripMenuItem.Text = "Last 14 Days";
             this.last14DaysToolStripMenuItem.ToolTipText = "View a Report Generated from the Past 14 Days of Use";
             // 
             // last30DaysToolStripMenuItem
             // 
             this.last30DaysToolStripMenuItem.Name = "last30DaysToolStripMenuItem";
-            this.last30DaysToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.last30DaysToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.last30DaysToolStripMenuItem.Text = "Last 30 Days";
             this.last30DaysToolStripMenuItem.ToolTipText = "View a Report Generated from the Past 30 Days of Use";
             // 
@@ -921,7 +922,8 @@
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showHideGamePanelToolStripMenuItem});
+            this.showHideGamePanelToolStripMenuItem,
+            this.viewExtendedPerformanceDetailsToolStripMenuItem});
             this.viewToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
@@ -935,7 +937,7 @@
             // 
             this.showHideGamePanelToolStripMenuItem.Image = global::Server_Manager.Properties.Resources.eyemini;
             this.showHideGamePanelToolStripMenuItem.Name = "showHideGamePanelToolStripMenuItem";
-            this.showHideGamePanelToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.showHideGamePanelToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
             this.showHideGamePanelToolStripMenuItem.Text = "Switch to Minimalist View";
             this.showHideGamePanelToolStripMenuItem.Click += new System.EventHandler(this.MinimalistView_Clicked);
             // 
@@ -1058,6 +1060,13 @@
             this.uptimeTimer.Enabled = true;
             this.uptimeTimer.Interval = 1000;
             this.uptimeTimer.Tick += new System.EventHandler(this.uptime_tick);
+            // 
+            // viewExtendedPerformanceDetailsToolStripMenuItem
+            // 
+            this.viewExtendedPerformanceDetailsToolStripMenuItem.Name = "viewExtendedPerformanceDetailsToolStripMenuItem";
+            this.viewExtendedPerformanceDetailsToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
+            this.viewExtendedPerformanceDetailsToolStripMenuItem.Text = "View Extended Performance Details";
+            this.viewExtendedPerformanceDetailsToolStripMenuItem.Click += new System.EventHandler(this.ExtendPerformance_Click);
             // 
             // Form1
             // 
@@ -1196,6 +1205,7 @@
         private System.Windows.Forms.ToolStripMenuItem last14DaysToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem last30DaysToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewPerformanceOptionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewExtendedPerformanceDetailsToolStripMenuItem;
     }
 }
 

@@ -11,13 +11,19 @@ namespace Server_Manager
 {
     public partial class ExtendedPeformanceWindow : Form
     {
+        public int PerformanceWindowOpen { get; private set; }
+
         public ExtendedPeformanceWindow()
         {
-            
+ 
+                       
+          //  StickyWindow(this)
             InitializeComponent();
             PerformanceWindowOpen = 1;
         }
 
-        public int PerformanceWindowOpen { get; private set; }
+
+
+
     }
 }

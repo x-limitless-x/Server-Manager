@@ -18,12 +18,16 @@ using System.Runtime.InteropServices;
 using Humanizer;
 using System.Management;
 using Microsoft.VisualBasic;
+using System.Security.Principal;
 
 namespace Server_Manager
 {
 
     public partial class Form1 : Form
     {
+
+
+
         public string networkusageSentVar { get; private set; }
         public string performanceCounterSent { get; private set; }
         public int SplitContainerClicked { get; private set; }
@@ -51,6 +55,11 @@ namespace Server_Manager
         {
 
 
+            if (IsAdministrator() == false)
+            {
+                MessageBox.Show("This Application Requires Administrator Privileges in order to function properly.\nPlease Restart this Program as Administrator");
+                this.Close(); //to turn off current app
+            }
 
             PerformanceInformationTimer.Enabled = true;
 
@@ -275,6 +284,11 @@ namespace Server_Manager
             }
         }
 
+        public static bool IsAdministrator()
+        {
+            return (new WindowsPrincipal(WindowsIdentity.GetCurrent()))
+                    .IsInRole(WindowsBuiltInRole.Administrator);
+        }
 
         private void ShowHidePerfButton(object sender, EventArgs e)
         {
@@ -617,7 +631,7 @@ namespace Server_Manager
         {
             if (System.Windows.Forms.Application.OpenForms["ExtendedPeformanceWindow"] as ExtendedPeformanceWindow != null)
             {
-                return;
+                
                 
             }
             else
