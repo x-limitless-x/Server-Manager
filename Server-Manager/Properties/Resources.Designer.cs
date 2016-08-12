@@ -63,9 +63,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap @__database_hosting_network_server_09_128 {
+        internal static System.Drawing.Bitmap application_settings_icon {
             get {
-                object obj = ResourceManager.GetObject("-_database_hosting_network_server-09-128", resourceCulture);
+                object obj = ResourceManager.GetObject("application_settings_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1000px_Circle_redo_svg {
+        internal static System.Drawing.Bitmap copy_icon {
             get {
-                object obj = ResourceManager.GetObject("1000px-Circle-redo.svg", resourceCulture);
+                object obj = ResourceManager.GetObject("copy_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _11970899991672979969brunurb_Retro_Joystick_002_svg_med {
+        internal static System.Drawing.Bitmap cut_icon {
             get {
-                object obj = ResourceManager.GetObject("11970899991672979969brunurb_Retro_Joystick_002.svg.med", resourceCulture);
+                object obj = ResourceManager.GetObject("cut_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2000px_Edit_copy_svg {
+        internal static System.Drawing.Bitmap exit_icon {
             get {
-                object obj = ResourceManager.GetObject("2000px-Edit-copy.svg", resourceCulture);
+                object obj = ResourceManager.GetObject("exit_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2000px_Gnome_edit_paste_svg {
+        internal static System.Drawing.Bitmap game_server_settings_icon {
             get {
-                object obj = ResourceManager.GetObject("2000px-Gnome-edit-paste.svg", resourceCulture);
+                object obj = ResourceManager.GetObject("game_server_settings_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2000px_Scissors_icon_black_svg {
+        internal static System.Drawing.Bitmap generate_report_icon {
             get {
-                object obj = ResourceManager.GetObject("2000px-Scissors_icon_black.svg", resourceCulture);
+                object obj = ResourceManager.GetObject("generate_report_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _27___uMwtJTu {
+        internal static System.Drawing.Bitmap generate_report_icon_unused {
             get {
-                object obj = ResourceManager.GetObject("27 - uMwtJTu", resourceCulture);
+                object obj = ResourceManager.GetObject("generate_report_icon_unused", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Configuracion {
+        internal static System.Drawing.Bitmap help_info_icon {
             get {
-                object obj = ResourceManager.GetObject("Configuracion", resourceCulture);
+                object obj = ResourceManager.GetObject("help_info_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap eyemgmt {
+        internal static System.Drawing.Bitmap help_web_icon {
             get {
-                object obj = ResourceManager.GetObject("eyemgmt", resourceCulture);
+                object obj = ResourceManager.GetObject("help_web_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap eyemini {
+        internal static System.Drawing.Bitmap killing_floor_2_button_icon {
             get {
-                object obj = ResourceManager.GetObject("eyemini", resourceCulture);
+                object obj = ResourceManager.GetObject("killing_floor_2_button_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +163,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap floppy_disk_save_512 {
+        internal static System.Drawing.Bitmap mainform_wallpaper {
             get {
-                object obj = ResourceManager.GetObject("floppy_disk_save-512", resourceCulture);
+                object obj = ResourceManager.GetObject("mainform_wallpaper", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +173,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Globe_icon_4_svg {
+        internal static System.Drawing.Bitmap management_view_icon {
             get {
-                object obj = ResourceManager.GetObject("Globe_icon_4.svg", resourceCulture);
+                object obj = ResourceManager.GetObject("management_view_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +183,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Infobox_info_icon_svg {
+        internal static System.Drawing.Bitmap menu_collapse_left_button_icon {
             get {
-                object obj = ResourceManager.GetObject("Infobox_info_icon.svg", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_collapse_left_button_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +193,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap killingfloor2button {
+        internal static System.Drawing.Bitmap menu_collapse_right_button_icon {
             get {
-                object obj = ResourceManager.GetObject("killingfloor2button", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_collapse_right_button_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +203,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap KPzCX45 {
+        internal static System.Drawing.Bitmap milkyway_wallpaper_unused {
             get {
-                object obj = ResourceManager.GetObject("KPzCX45", resourceCulture);
+                object obj = ResourceManager.GetObject("milkyway_wallpaper_unused", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +213,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap map_712x462 {
+        internal static System.Drawing.Bitmap minimalist_view_icon {
             get {
-                object obj = ResourceManager.GetObject("map-712x462", resourceCulture);
+                object obj = ResourceManager.GetObject("minimalist_view_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,9 +223,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap menucollapseleft {
+        internal static System.Drawing.Bitmap mumble_unused {
             get {
-                object obj = ResourceManager.GetObject("menucollapseleft", resourceCulture);
+                object obj = ResourceManager.GetObject("mumble_unused", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +233,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap menucollapseright {
+        internal static System.Drawing.Bitmap mumbule_banner_unused {
             get {
-                object obj = ResourceManager.GetObject("menucollapseright", resourceCulture);
+                object obj = ResourceManager.GetObject("mumbule_banner_unused", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,9 +243,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap mumble {
+        internal static System.Drawing.Bitmap open_file_icon {
             get {
-                object obj = ResourceManager.GetObject("mumble", resourceCulture);
+                object obj = ResourceManager.GetObject("open_file_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,9 +253,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap mumble_banner {
+        internal static System.Drawing.Bitmap paste_icon {
             get {
-                object obj = ResourceManager.GetObject("mumble_banner", resourceCulture);
+                object obj = ResourceManager.GetObject("paste_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +263,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap projectzomboidbutton {
+        internal static System.Drawing.Bitmap project_zomboid_button_icon {
             get {
-                object obj = ResourceManager.GetObject("projectzomboidbutton", resourceCulture);
+                object obj = ResourceManager.GetObject("project_zomboid_button_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,9 +273,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap saveas_icon {
+        internal static System.Drawing.Bitmap project_zomboid_muldraugh_map {
             get {
-                object obj = ResourceManager.GetObject("saveas_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("project_zomboid_muldraugh_map", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,9 +283,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap The_tail_end_of_milky_way_over_Apollo_bay {
+        internal static System.Drawing.Bitmap quick_save_icon {
             get {
-                object obj = ResourceManager.GetObject("The tail end of milky way over Apollo bay", resourceCulture);
+                object obj = ResourceManager.GetObject("quick_save_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,9 +293,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap uploading_files {
+        internal static System.Drawing.Bitmap restart_icon {
             get {
-                object obj = ResourceManager.GetObject("uploading-files", resourceCulture);
+                object obj = ResourceManager.GetObject("restart_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,9 +303,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap uptime {
+        internal static System.Drawing.Bitmap save_as_icon {
             get {
-                object obj = ResourceManager.GetObject("uptime", resourceCulture);
+                object obj = ResourceManager.GetObject("save_as_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -313,9 +313,9 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap wand_307272_960_720 {
+        internal static System.Drawing.Bitmap server_settings_icon {
             get {
-                object obj = ResourceManager.GetObject("wand-307272_960_720", resourceCulture);
+                object obj = ResourceManager.GetObject("server_settings_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,9 +323,59 @@ namespace Server_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap x_1152114_960_720 {
+        internal static System.Drawing.Bitmap server_wizard_icon {
             get {
-                object obj = ResourceManager.GetObject("x-1152114_960_720", resourceCulture);
+                object obj = ResourceManager.GetObject("server_wizard_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap settings_icon {
+            get {
+                object obj = ResourceManager.GetObject("settings_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stripped_lines {
+            get {
+                object obj = ResourceManager.GetObject("stripped_lines", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap unused_icon {
+            get {
+                object obj = ResourceManager.GetObject("unused_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap uptime_icon {
+            get {
+                object obj = ResourceManager.GetObject("uptime_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap view_extended_performance_details_icon {
+            get {
+                object obj = ResourceManager.GetObject("view_extended_performance_details_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

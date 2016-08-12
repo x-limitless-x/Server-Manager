@@ -71,11 +71,11 @@
     <Compile Include="ExtendedPeformanceWindow.Designer.cs">
       <DependentUpon>ExtendedPeformanceWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,8 +88,8 @@
     <EmbeddedResource Include="ExtendedPeformanceWindow.resx">
       <DependentUpon>ExtendedPeformanceWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -232,6 +232,198 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eyemgmt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\osa_server_application.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2000px-Edit-copy.svg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2000px-Scissors_icon_black.svg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x-1152114_960_7201.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11970899991672979969brunurb_Retro_Joystick_002.svg.med1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spreadsheet-28205_960_720.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Informations-financieres-icone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Infobox_info_icon.svg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Globe_icon_4.svg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\killingfloor21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\27 - uMwtJTu1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eyemgmt1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu-collapse-left1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu-collapse-right1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\The tail end of milky way over Apollo bay1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\270cb33a78ebfeb1ba9ad42f2d15d847e03fd294_original1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mumble1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mumble_banner1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uploading-files1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2000px-Gnome-edit-paste.svg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\projectzomboid%28button%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\map-712x4621.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\floppy_disk_save-5121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1000px-Circle-redo.svg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2000px-Gnome-document-save.svg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrench-43960_960_720.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wand-307272_960_7201.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Configuracion1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KPzCX451.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-_database_hosting_network_server-09-1281.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uptime1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gauge-1294818_960_720.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\osa_server_application1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2000px-Edit-copy.svg2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2000px-Scissors_icon_black.svg2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x-1152114_960_7202.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11970899991672979969brunurb_Retro_Joystick_002.svg.med2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spreadsheet-28205_960_7201.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Informations-financieres-icone1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Infobox_info_icon.svg2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Globe_icon_4.svg2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\killingfloor22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\27 - uMwtJTu2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eyemgmt2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu-collapse-left2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu-collapse-right2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\The tail end of milky way over Apollo bay2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\270cb33a78ebfeb1ba9ad42f2d15d847e03fd294_original2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mumble2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mumble_banner2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uploading-files2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2000px-Gnome-edit-paste.svg2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\projectzomboid%28button%292.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\map-712x4622.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\floppy_disk_save-5122.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1000px-Circle-redo.svg2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2000px-Gnome-document-save.svg2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrench-43960_960_7201.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wand-307272_960_7202.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Configuracion2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KPzCX452.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-_database_hosting_network_server-09-1282.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uptime2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gauge-1294818_960_7201.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

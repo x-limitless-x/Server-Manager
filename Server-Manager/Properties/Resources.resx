@@ -118,85 +118,100 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Infobox_info_icon.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Infobox_info_icon.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="application_settings_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\osa_server_application1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="menucollapseright" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menu-collapse-right.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="copy_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2000px-Edit-copy.svg2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="saveas_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2000px-Gnome-document-save.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cut_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2000px-Scissors_icon_black.svg2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="map-712x462" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\map-712x462.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="exit_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\x-1152114_960_7202.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="The tail end of milky way over Apollo bay" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\The tail end of milky way over Apollo bay.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="game_server_settings_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\11970899991672979969brunurb_Retro_Joystick_002.svg.med2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="floppy_disk_save-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\floppy_disk_save-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="generate_report_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spreadsheet-28205_960_7201.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="2000px-Scissors_icon_black.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2000px-Scissors_icon_black.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="generate_report_icon_unused" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Informations-financieres-icone1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="menucollapseleft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menu-collapse-left.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="help_info_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Infobox_info_icon.svg2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="2000px-Edit-copy.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2000px-Edit-copy.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="help_web_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Globe_icon_4.svg2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Configuracion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Configuracion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="killing_floor_2_button_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\killingfloor22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mumble_banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mumble_banner.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mainform_wallpaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\27 - uMwtJTu2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="27 - uMwtJTu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\27 - uMwtJTu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="management_view_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eyemgmt2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="projectzomboidbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\projectzomboid(button).jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="menu_collapse_left_button_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu-collapse-left2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="11970899991672979969brunurb_Retro_Joystick_002.svg.med" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\11970899991672979969brunurb_Retro_Joystick_002.svg.med.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="menu_collapse_right_button_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu-collapse-right2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eyemini" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\270cb33a78ebfeb1ba9ad42f2d15d847e03fd294_original.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="milkyway_wallpaper_unused" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\The tail end of milky way over Apollo bay2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1000px-Circle-redo.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1000px-Circle-redo.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minimalist_view_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\270cb33a78ebfeb1ba9ad42f2d15d847e03fd294_original2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mumble" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mumble.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mumble_unused" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mumble2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="2000px-Gnome-edit-paste.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2000px-Gnome-edit-paste.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mumbule_banner_unused" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mumble_banner2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Globe_icon_4.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Globe_icon_4.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="open_file_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\uploading-files2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="uploading-files" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\uploading-files.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="paste_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2000px-Gnome-edit-paste.svg2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="killingfloor2button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\killingfloor2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="project_zomboid_button_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\projectzomboid(button)2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wand-307272_960_720" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wand-307272_960_720.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="project_zomboid_muldraugh_map" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\map-712x4622.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="x-1152114_960_720" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\x-1152114_960_720.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="quick_save_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\floppy_disk_save-5122.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="uptime" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\uptime.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="restart_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1000px-Circle-redo.svg2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="-_database_hosting_network_server-09-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\-_database_hosting_network_server-09-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="save_as_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2000px-Gnome-document-save.svg2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="KPzCX45" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\KPzCX45.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="server_settings_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wrench-43960_960_7201.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eyemgmt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eyemgmt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="server_wizard_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wand-307272_960_7202.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settings_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Configuracion2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stripped_lines" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KPzCX452.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unused_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\-_database_hosting_network_server-09-1282.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="uptime_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\uptime2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="view_extended_performance_details_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gauge-1294818_960_7201.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
