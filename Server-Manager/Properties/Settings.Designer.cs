@@ -25,7 +25,7 @@ namespace Server_Manager.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Game Server Settings")]
         public string Setting {
             get {
                 return ((string)(this["Setting"]));

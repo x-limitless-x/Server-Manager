@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Server_Manager
 {
-    public partial class SettingsForm : Form
+    public partial class GameServerSettingsForm : Form
     {
-        public SettingsForm()
+        public GameServerSettingsForm()
         {
             InitializeComponent();
         }

@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 using Humanizer;
 
 
+
 namespace Server_Manager
 {
 
@@ -57,6 +58,7 @@ namespace Server_Manager
                     MessageBoxOptions.DefaultDesktopOnly);
 
                 System.Diagnostics.Debugger.Break();
+
             }
 
             PerformanceInformationTimer.Enabled = true;
@@ -326,12 +328,12 @@ namespace Server_Manager
                 publicipaddressbox.Text = pubIp;
                 localipaddressbox.Text = LocalIp;
             }
-            //            catch (SocketException ex)
-            //           {
-            //                publicipaddressbox.Text = "Cannot Retrieve Your IP";
-            //                localipaddressbox.Text = "Cannot Retrieve Your IP";
-            //                Thread.Sleep(500);
-            //            }
+                //            catch (SocketException ex)
+                //           {
+                //                publicipaddressbox.Text = "Cannot Retrieve Your IP";
+                //                localipaddressbox.Text = "Cannot Retrieve Your IP";
+                //                Thread.Sleep(500);
+                //            }
             catch (Exception)
             {
                 publicipaddressbox.Text = "No Connectivity";
@@ -385,16 +387,22 @@ namespace Server_Manager
         {
 
 
-            SettingsForm form = new SettingsForm();
+            GameServerSettingsForm form = new GameServerSettingsForm();
             form.ShowDialog(this);
             //form.Show(); 
             // or form.ShowDialog(this);
 
         }
 
+        private void gameServerSettingsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            GameServerSettingsForm form = new GameServerSettingsForm();
+            form.ShowDialog(this);
+        }
+
         private void testToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
             Process.Start(Application.ExecutablePath); // to start new instance of application
             //this.Close(); //to turn off current app
             Dispose();
@@ -409,21 +417,35 @@ namespace Server_Manager
 
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (computernamebox.SelectionLength > 0)
-                // Copy the selected text to the Clipboard.
-                computernamebox.Copy();
-            else if (publicipaddressbox.SelectionLength > 0)
-                publicipaddressbox.Copy();
-            else if (localipaddressbox.SelectionLength > 0)
-                localipaddressbox.Copy();
-            else if (localipaddressbox.SelectionLength > 0)
-                cpuUsageBox.Copy();
-            else if (ramUsageBox.SelectionLength > 0)
+
+
+
+
+            if (ramUsageBox.SelectionLength > 0)
+            {
                 ramUsageBox.Copy();
-            else if (powerUsageBox.SelectionLength > 0)
+            }
+            if (powerUsageBox.SelectionLength > 0)
+            {
                 powerUsageBox.Copy();
-            else if (diskusageBox.SelectionLength > 0)
+            }
+            if (diskusageBox.SelectionLength > 0)
+            {
                 diskusageBox.Copy();
+            }
+            if (localipaddressbox.SelectionLength > 0)
+            {
+                localipaddressbox.Copy();
+            }
+            if (publicipaddressbox.SelectionLength > 0)
+            {
+                publicipaddressbox.Copy();
+            }
+            if (computernamebox.SelectionLength > 0)
+            // Copy the selected text to the Clipboard.
+            {
+                computernamebox.Copy();
+            }
         }
 
         private void DoNothing(object sender, EventArgs e)
@@ -479,28 +501,40 @@ namespace Server_Manager
             switch (serviceController1.Status)
             {
                 case ServiceControllerStatus.Running:
+                {
                     serviceStatus.Text = "Running";
                     return;
+                }
                 case ServiceControllerStatus.Stopped:
+                {
                     serviceStatus.Text = "Stopped";
                     return;
+                }
                 case ServiceControllerStatus.Paused:
+                {
                     serviceStatus.Text = "Paused";
                     return;
+                }
                 case ServiceControllerStatus.StopPending:
+                {
                     serviceStatus.Text = "Stopping";
                     return;
+                }
                 case ServiceControllerStatus.StartPending:
+                {
                     serviceStatus.Text = "Starting";
                     return;
+                }
                 default:
+                {
                     serviceStatus.Text = "Status Changing";
                     return;
-                    //STOP SERVICE MONITORING
+                }
+                //STOP SERVICE MONITORING
             }
         }
 
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void servicestart_clicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             try
             {
@@ -512,7 +546,6 @@ namespace Server_Manager
 
 
             }
-
         }
 
         private void servicestop_click(object sender, LinkLabelLinkClickedEventArgs e)
@@ -530,10 +563,60 @@ namespace Server_Manager
 
         }
 
-        private void ExtendPerformance_Click(object sender, EventArgs e)
+        private void servicerestart_click(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (System.Windows.Forms.Application.OpenForms["ExtendedPeformanceWindow"] as ExtendedPeformanceWindow !=
-                null)
+            switch (serviceController1.Status)
+            {
+                case ServiceControllerStatus.Running:
+
+                {
+                    try
+                    {
+                            serviceController1.Refresh();
+
+                        serviceController1.Stop();
+                        serviceController1.WaitForStatus(ServiceControllerStatus.Stopped);
+
+                        serviceController1.Refresh();
+
+                        serviceController1.Start();
+                        serviceController1.WaitForStatus(ServiceControllerStatus.Running);
+
+                            serviceController1.Refresh();
+                            return;
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+
+                case ServiceControllerStatus.Stopped:
+
+                {
+                    try
+                    {
+
+                        serviceController1.Start();
+                        serviceController1.WaitForStatus(desiredStatus: ServiceControllerStatus.Running);
+
+                            serviceController1.Refresh();
+
+                            return;
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+            }
+        }
+    
+
+    private
+            void ExtendPerformance_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["ExtendedPeformanceWindow"] is ExtendedPeformanceWindow)
             {
 
 
@@ -782,18 +865,24 @@ namespace Server_Manager
 
             if (SplitContainerClicked == 0)
             {
-
+                showHideGamePanelToolStripMenuItem.Image = Resources.minimalist_view_icon;
                 showhidesplit.BackgroundImage = Resources.menu_collapse_left_button_icon;
                 showHideGamePanelToolStripMenuItem.Text = "Switch to Minimalist View";
             }
             else
             {
-
+                showHideGamePanelToolStripMenuItem.Image = Resources.management_view_icon;
                 showhidesplit.BackgroundImage = Resources.menu_collapse_right_button_icon;
                 showHideGamePanelToolStripMenuItem.Text = "Switch to Management View";
             }
         }
 
-
+        private void applicationServerSettings_Clicked(object sender, EventArgs e)
+        {
+            ApplicationSettingsWindow form = new ApplicationSettingsWindow();
+            form.ShowDialog(this);
+            //form.Show(); 
+            // or form.ShowDialog(this);
+        }
     }
 }

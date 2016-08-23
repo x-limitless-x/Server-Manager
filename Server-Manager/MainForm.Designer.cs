@@ -310,6 +310,7 @@
             this.linkLabel4.TabIndex = 51;
             this.linkLabel4.TabStop = true;
             this.linkLabel4.Text = "Restart";
+            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.servicerestart_click);
             // 
             // linkLabel3
             // 
@@ -335,7 +336,7 @@
             this.linkLabel2.TabIndex = 49;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Start";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.servicestart_clicked);
             // 
             // pictureBox2
             // 
@@ -884,7 +885,6 @@
             this.fileToolStripMenuItem.Text = "File";
             this.fileToolStripMenuItem.DropDownClosed += new System.EventHandler(this.file_DropDownClosed);
             this.fileToolStripMenuItem.DropDownOpened += new System.EventHandler(this.file_ChangeColor);
-            this.fileToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.file_DropDownClosed);
             // 
             // newServerWizardToolStripMenuItem
             // 
@@ -941,7 +941,6 @@
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.DropDownClosed += new System.EventHandler(this.edit_DropDownClosed);
             this.editToolStripMenuItem.DropDownOpened += new System.EventHandler(this.edit_ChangeColor);
-            this.editToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.edit_DropDownClosed);
             // 
             // cutToolStripMenuItem
             // 
@@ -979,7 +978,6 @@
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.DropDownClosed += new System.EventHandler(this.settings_DropDownClosed);
             this.settingsToolStripMenuItem.DropDownOpened += new System.EventHandler(this.settings_ChangeColor);
-            this.settingsToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.settings_DropDownClosed);
             // 
             // applicationSettingsToolStripMenuItem
             // 
@@ -987,6 +985,7 @@
             this.applicationSettingsToolStripMenuItem.Name = "applicationSettingsToolStripMenuItem";
             this.applicationSettingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.applicationSettingsToolStripMenuItem.Text = "Settings";
+            this.applicationSettingsToolStripMenuItem.Click += new System.EventHandler(this.applicationServerSettings_Clicked);
             // 
             // gameServerSettingsToolStripMenuItem
             // 
@@ -1017,6 +1016,7 @@
             | System.Windows.Forms.Keys.G)));
             this.gameServerSettingsToolStripMenuItem1.Size = new System.Drawing.Size(280, 22);
             this.gameServerSettingsToolStripMenuItem1.Text = "Game Server Settings";
+            this.gameServerSettingsToolStripMenuItem1.Click += new System.EventHandler(this.gameServerSettingsToolStripMenuItem1_Click);
             // 
             // viewToolStripMenuItem
             // 
@@ -1029,7 +1029,6 @@
             this.viewToolStripMenuItem.Text = "View";
             this.viewToolStripMenuItem.DropDownClosed += new System.EventHandler(this.view_DropDownClosed);
             this.viewToolStripMenuItem.DropDownOpened += new System.EventHandler(this.view_ChangeColor);
-            this.viewToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.view_DropDownClosed);
             // 
             // showHideGamePanelToolStripMenuItem
             // 
@@ -1092,20 +1091,19 @@
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.DropDownClosed += new System.EventHandler(this.help_DropDownClosed);
             this.helpToolStripMenuItem.DropDownOpened += new System.EventHandler(this.help_ChangeColor);
-            this.helpToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.help_DropDownClosed);
             // 
             // websiteToolStripMenuItem
             // 
             this.websiteToolStripMenuItem.Image = global::Server_Manager.Properties.Resources.help_web_icon;
             this.websiteToolStripMenuItem.Name = "websiteToolStripMenuItem";
-            this.websiteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.websiteToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.websiteToolStripMenuItem.Text = "Website";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Image = global::Server_Manager.Properties.Resources.help_info_icon;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // progressBar1
